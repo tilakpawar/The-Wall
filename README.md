@@ -10,12 +10,13 @@ No framework, no build step, no npm dependencies. A GitHub Action refreshes the 
 
 ```
 GitHub Action (cron, every 4h)              GitHub Pages
-  ├─ Reddit (.json / .rss) ──┐
-  ├─ Imgur + Giphy         ──┤
-  ├─ Hacker News           ──┼─► _site/ ──► uploaded as an artifact ──► the wall
-  ├─ Know Your Meme        ──┤   (html + css + js + feed.json)
-  │    (via Firecrawl)       │
-  └─ 2× Haiku calls        ──┘
+  ├─ Lemmy (memes, viral, tech) ─┐
+  ├─ Know Your Meme RSS         ─┤
+  ├─ Wikipedia most-read        ─┼─► _site/ ─► uploaded as an artifact ─► the wall
+  ├─ Bluesky What's Hot         ─┤   (html + css + js + feed.json)
+  ├─ Hacker News                ─┤
+  ├─ Imgur + Giphy              ─┤
+  └─ 2× Haiku calls             ─┘
        clusters, blurbs, glossary
               │
               └─► memory.json ──► force-pushed to the `state` branch
@@ -32,25 +33,27 @@ The **refresh button** re-fetches `feed.json` (cache-busted) and picks up new Ha
 
 ## Sources
 
-| Source | Key | Self-serve? | Gives you |
-|---|---|---|---|
-| **Reddit** `.json` / `.rss` | personal feed token | yes | Memes, GIFs, stories. On the JSON path: pre-generated thumbnails at 5 widths + mp4 for every GIF |
-| **Imgur** viral gallery | client ID | yes | Memes and GIFs, with its own thumbnail ladder via URL suffixes |
-| **Giphy** trending | API key | yes | GIFs already transcoded to mp4 at several widths |
-| **Hacker News** Firebase | none | — | Tech discourse. No rate limit, CORS-enabled, so the browser can call it live |
-| **Know Your Meme** | Firecrawl | yes | *Why* a format is everywhere — origin + explanation |
+| Source | Key | Gives you |
+|---|---|---|
+| **Lemmy** `/api/v3/post/list` | none | The Reddit replacement. Real memes with exact image dimensions, and pict-rs resizes on demand via `?thumbnail=` — so the bandwidth trick survives intact |
+| **Know Your Meme** `/newsfeed.rss` | none | *Why* a format is everywhere — origin + explanation |
+| **Wikipedia** most-read | none | What everyone suddenly looked up yesterday, each with a written explanation. A shockingly good "what happened" signal |
+| **Bluesky** What's Hot | none | The closest thing to an X timeline with a public API |
+| **Hacker News** Firebase | none | Tech discourse. No rate limit, CORS-enabled, so the browser can top up live |
+| **Imgur** viral gallery | free client ID | Memes and GIFs, with its own thumbnail ladder via URL suffixes |
+| **Giphy** trending | free API key | GIFs already transcoded to mp4 at several widths |
 
-### A warning about Reddit
+Five of the seven need no account at all. Nothing here blocks datacenter IPs.
 
-**Self-serve API app registration is dead.** Under the [Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy), "approval is required" before accessing the API, and `/prefs/apps` now fails silently when you click *create app* — no error, the captcha just resets. Don't waste an evening on it like I did. Solo-developer requests are reportedly rejected at a high rate.
+### Why Reddit isn't in that list
 
-What still works is the **personal feed token** in your account preferences. The builder attaches it and tries `.json` first — that's the path with the thumbnail ladder and mp4 variants — then falls back to parsing `.rss`, which always works but gives no score, no dimensions, and only one image size.
+It 403s **every** request from GitHub's IP ranges, on both `.json` and `.rss`, regardless of credentials. And you can't route around it with an API key: under the [Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy) "approval is required" before API access, and `/prefs/apps` now fails silently when you click *create app* — no error, the captcha just resets. Solo-developer requests are reportedly rejected at a high rate. Don't spend an evening on it.
 
-Reddit throttles these reads to roughly **1 request per minute**, so `REDDIT_GAP_MS` defaults to 65s and a full build takes ~10 minutes. That is fine: nobody is waiting on it. Imgur and Giphy exist in the mix partly as insurance — if Reddit tightens further, the wall still fills.
+The fetcher still contains a working Reddit path, because a **residential** IP is fine. If you ever run the build from your own machine, add a `reddit: ['memes', ...]` array to any topic in `sources.mjs` and set `REDDIT_USER` / `REDDIT_FEED_TOKEN` from <https://www.reddit.com/prefs/feeds/>. Leave it empty for CI. Note the ~1 request/minute throttle: `REDDIT_GAP_MS` defaults to 65s, so each subreddit adds a minute to the build.
 
-Instagram and X have no usable public API and block scrapers aggressively. Nearly everything that trends there is reposted to Reddit or Imgur within hours.
+Instagram and X have no usable public API and block scrapers aggressively. Bluesky is the practical substitute, and most visual content resurfaces on Lemmy or Imgur anyway.
 
-Edit `scripts/sources.mjs` to change topics, subreddits, or the request gap. Nothing else needs touching.
+Edit `scripts/sources.mjs` to change topics or communities. Nothing else needs touching.
 
 ---
 
@@ -58,29 +61,21 @@ Edit `scripts/sources.mjs` to change topics, subreddits, or the request gap. Not
 
 **1. Push to a repo**, then Settings → Pages → Source: **GitHub Actions** (not "Deploy from a branch"). Public repo — Actions minutes are unlimited there and metered on private.
 
-**2. Reddit feed token** (2 minutes, no approval needed)
+**2. No keys needed for most of it.** Lemmy, Know Your Meme, Wikipedia, Bluesky and Hacker News work immediately. You can stop here and have a working wall.
 
-- Go to <https://www.reddit.com/prefs/feeds/> while logged in
-- Any of the RSS links there contains `?feed=<long-hex-string>&user=<your-username>` — copy both values
-- Secrets: `REDDIT_FEED_TOKEN` = the hex string, `REDDIT_USER` = your username
+**3. Imgur** (optional) — <https://api.imgur.com/oauth2/addclient> → *OAuth 2 without callback URL*. Copy the **Client ID** only. Secret: `IMGUR_CLIENT_ID`
 
-Skip this and the build still runs anonymously, but expect heavy throttling and mostly-RSS results.
+**4. Giphy** (optional) — <https://developers.giphy.com/dashboard/> → Create an App → **API Key**. Secret: `GIPHY_API_KEY`
 
-**3. Imgur** — <https://api.imgur.com/oauth2/addclient> → *OAuth 2 without callback URL*. Copy the **Client ID** only. Secret: `IMGUR_CLIENT_ID`
-
-**4. Giphy** — <https://developers.giphy.com/dashboard/> → Create an App → **API Key**. Secret: `GIPHY_API_KEY`
-
-**5. Optional** — `FIRECRAWL_API_KEY` (Know Your Meme), `ANTHROPIC_API_KEY` (clusters, blurbs, glossary).
+**5. Anthropic** (optional) — enables clusters, blurbs and the glossary. Secret: `ANTHROPIC_API_KEY`
 
 **6. Secrets go in** repo → Settings → Secrets and variables → Actions → New repository secret. Names must match exactly:
 
 ```
-REDDIT_USER          REDDIT_FEED_TOKEN
-IMGUR_CLIENT_ID      GIPHY_API_KEY
-FIRECRAWL_API_KEY    ANTHROPIC_API_KEY
+IMGUR_CLIENT_ID    GIPHY_API_KEY    ANTHROPIC_API_KEY
 ```
 
-**7. Run it once.** Actions → *Refresh feed* → Run workflow. Expect ~10 minutes. The log tells you which path each source took (`json` vs `rss fallback`). It commits `data/feed.json` and `data/memory.json`; then open your Pages URL.
+**7. Run it once.** Actions → *Refresh feed* → Run workflow. Takes a couple of minutes. The log prints a line per source — `c/memes: 28` means it worked, `imgur: skipped (no IMGUR_CLIENT_ID)` means that secret is missing. Then open your Pages URL.
 
 Every source is independently optional. Missing keys log a skip line; failures log a warning. The build only hard-fails if *nothing* was fetched, so a bad run can never blank your wall.
 
@@ -130,9 +125,9 @@ Titles only. Never image data, never post bodies, never URLs. Output is compact 
 
 These are the actual techniques, and why each one matters:
 
-1. **Never fetch the full-size image.** Reddit pre-renders every upload at 108/216/320/640/960/1080 px and hands you the whole ladder in the API response. Imgur does the same thing via URL suffixes (`i.imgur.com/{hash}m.jpg` = 320px, `l` = 640, `h` = 1024). The builder harvests both into a `srcset`, and `sizes="(min-width:1000px) 24vw, 46vw"` lets the browser pick the smallest rung that fits its column. On a phone you download the 320px version of a 4 MB image. This alone is the difference between a 40 MB page and a 3 MB page.
+1. **Never fetch the full-size image.** Every source hands you a way to ask for a smaller one. Lemmy's pict-rs resizes on demand (`?thumbnail=320&format=webp`), Imgur exposes sizes as URL suffixes (`{hash}m.jpg` = 320px, `l` = 640, `h` = 1024), Bluesky serves a `thumb` alongside `fullsize`, Giphy pre-renders several widths. The builder harvests all of them into a `srcset`, and `sizes="(min-width:1000px) 24vw, 46vw"` lets the browser pick the smallest rung that fits its column. On a phone you download the 320px WebP of a 4 MB image. This alone is the difference between a 40 MB page and a 3 MB page.
 
-2. **GIFs are never GIFs.** Every animated post on Reddit, Imgur, and Giphy also exists as an mp4, at roughly 5–20× smaller. The wall shows a still frame; the mp4 is fetched **only on hover or tap**. Scrolling past a hundred GIF tiles costs you a hundred small JPEGs, not a hundred videos.
+2. **GIFs are never GIFs.** Every animated post on Imgur and Giphy also exists as an mp4, at roughly 5–20× smaller. The wall shows a still frame; the mp4 is fetched **only on hover or tap**. Scrolling past a hundred GIF tiles costs you a hundred small stills, not a hundred videos.
 
 3. **Reserve the space before the pixels arrive.** Each tile ships `width`/`height` from the API and sets `aspect-ratio` on an empty box. Nothing on the page ever jumps as images load — no cumulative layout shift, no reflow storms while you scroll. This is the single biggest contributor to *feeling* fast.
 
