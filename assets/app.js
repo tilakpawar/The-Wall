@@ -25,21 +25,41 @@ async function load({ bust = false } = {}) {
   else { $('#splash').hidden = false; cycleSplash(); }
 
   // 2. Then go get the real thing.
+  const url = new URL('./data/feed.json' + (bust ? `?t=${Date.now()}` : ''), location.href).href;
   try {
-    const url = './data/feed.json' + (bust ? `?t=${Date.now()}` : '');
     const r = await fetch(url, { cache: bust ? 'reload' : 'default' });
-    if (!r.ok) throw new Error(r.status);
-    const j = await r.json();
+    if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`);
+
+    const text = await r.text();
+    // A missing file on Pages returns the 404 *page*, not a 404 status, when a
+    // custom 404 exists — so check we actually got JSON before trusting it.
+    if (text.trimStart().startsWith('<')) throw new Error('got HTML, not JSON — data/feed.json is missing');
+
+    const j = JSON.parse(text);
+    if (!Array.isArray(j.items)) throw new Error('feed.json has no items array');
+
     sessionStorage.setItem('wall.feed', JSON.stringify(j));
     apply(j);
   } catch (e) {
-    if (!cached) {
-      $('#splashMsg').textContent = 'No feed yet — run the build workflow once.';
-      $('#splash').querySelector('.orb').style.display = 'none';
-      return;
-    }
+    if (!cached) return fail(e, url);
+    console.warn('feed refresh failed, showing cached copy:', e);
   }
+  stopSplash();
   $('#splash').hidden = true;
+}
+
+/** Show the real reason instead of spinning forever. */
+function fail(err, url) {
+  stopSplash();
+  $('#splash').hidden = false;
+  $('#splash').querySelector('.orb').style.display = 'none';
+  $('#splashMsg').textContent = "Couldn't load the feed";
+  $('#splash').querySelector('.sub').innerHTML =
+    `<code>${esc(String(err.message || err))}</code><br><br>
+     Tried: <code>${esc(url)}</code><br><br>
+     Open that URL directly. If it 404s, the build hasn't committed
+     <code>data/feed.json</code> yet — check the Actions tab.`;
+  console.error('[wall] feed load failed:', err, url);
 }
 
 function apply(j, { silent } = {}) {
@@ -330,12 +350,24 @@ function relTime(d) {
 }
 
 const MSGS = ['Gathering the internet…', 'Reading the group chats…', 'Sorting jokes from news…', 'Almost there…'];
+let splashTimer, splashGuard;
+
 function cycleSplash() {
+  stopSplash();
   let i = 0;
-  const t = setInterval(() => {
-    if ($('#splash').hidden) return clearInterval(t);
+  splashTimer = setInterval(() => {
+    if ($('#splash').hidden) return stopSplash();
     $('#splashMsg').textContent = MSGS[++i % MSGS.length];
   }, 2200);
+  // Never spin forever. If the fetch hasn't resolved in 15s, something is wrong.
+  splashGuard = setTimeout(() => {
+    if (!$('#splash').hidden) fail(new Error('timed out after 15s'), './data/feed.json');
+  }, 15000);
+}
+
+function stopSplash() {
+  clearInterval(splashTimer);
+  clearTimeout(splashGuard);
 }
 
 load();

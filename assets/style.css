@@ -221,7 +221,12 @@ body{
 .orb i:nth-child(2){inset:8px;border-top-color:var(--accent2);animation-duration:1.6s;animation-direction:reverse}
 .orb i:nth-child(3){inset:16px;border-top-color:var(--fg);animation-duration:2.1s}
 .splash p{margin:0;font-size:15px;font-weight:560}
-.splash .sub,.empty .sub{color:var(--dim);font-size:13px;font-weight:400;max-width:34ch}
+.splash .sub,.empty .sub{color:var(--dim);font-size:13px;font-weight:400;max-width:40ch;line-height:1.6}
+.splash code{
+  font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--card);border:1px solid var(--line);border-radius:6px;
+  padding:2px 6px;color:var(--fg);word-break:break-all;
+}
 
 .empty{display:grid;place-items:center;gap:4px;padding:70px 24px;text-align:center}
 .empty p{margin:0}

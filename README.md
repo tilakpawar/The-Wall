@@ -26,38 +26,65 @@ The **refresh button** re-fetches `feed.json` (cache-busted) and picks up new Ha
 
 ## Sources
 
-| Source | Cost | Key | Gives you |
+| Source | Key | Self-serve? | Gives you |
 |---|---|---|---|
-| **Reddit** `oauth.reddit.com/r/{sub}/top` | free | free OAuth app | Memes, GIFs, stories — **plus pre-generated thumbnails at 5 widths and mp4 versions of every GIF** |
-| **Hacker News** Firebase API | free | none | Tech discourse. No rate limit, CORS-enabled, so the browser can call it directly |
-| **Know Your Meme** `/memes/popular` | Firecrawl credits | Firecrawl | *Why* a format is everywhere — origin + explanation |
-| **r/OutOfTheLoop** | free | (Reddit) | Literally a subreddit of people asking "what happened" and getting answered |
+| **Reddit** `.json` / `.rss` | personal feed token | yes | Memes, GIFs, stories. On the JSON path: pre-generated thumbnails at 5 widths + mp4 for every GIF |
+| **Imgur** viral gallery | client ID | yes | Memes and GIFs, with its own thumbnail ladder via URL suffixes |
+| **Giphy** trending | API key | yes | GIFs already transcoded to mp4 at several widths |
+| **Hacker News** Firebase | none | — | Tech discourse. No rate limit, CORS-enabled, so the browser can call it live |
+| **Know Your Meme** | Firecrawl | yes | *Why* a format is everywhere — origin + explanation |
 
-Instagram and X have no usable public API and aggressively block scrapers. Almost everything that trends there is reposted to Reddit within hours, which is why Reddit is the spine of this. Reddit is also the only one of these that hands you a thumbnail ladder for free — that's worth more than the extra sources.
+### A warning about Reddit
 
-Edit `scripts/sources.mjs` to change topics or subreddits. Nothing else needs touching.
+**Self-serve API app registration is dead.** Under the [Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy), "approval is required" before accessing the API, and `/prefs/apps` now fails silently when you click *create app* — no error, the captcha just resets. Don't waste an evening on it like I did. Solo-developer requests are reportedly rejected at a high rate.
+
+What still works is the **personal feed token** in your account preferences. The builder attaches it and tries `.json` first — that's the path with the thumbnail ladder and mp4 variants — then falls back to parsing `.rss`, which always works but gives no score, no dimensions, and only one image size.
+
+Reddit throttles these reads to roughly **1 request per minute**, so `REDDIT_GAP_MS` defaults to 65s and a full build takes ~10 minutes. That is fine: nobody is waiting on it. Imgur and Giphy exist in the mix partly as insurance — if Reddit tightens further, the wall still fills.
+
+Instagram and X have no usable public API and block scrapers aggressively. Nearly everything that trends there is reposted to Reddit or Imgur within hours.
+
+Edit `scripts/sources.mjs` to change topics, subreddits, or the request gap. Nothing else needs touching.
 
 ---
 
-## Setup (about 10 minutes)
+## Setup
 
-**1. Push this to a repo.** Settings → Pages → Source: *Deploy from a branch*, `main` / root.
+**1. Push to a repo**, then Settings → Pages → Source: *Deploy from a branch*, `main` / root. Public repo — Actions minutes are unlimited there and metered on private.
 
-**2. Reddit credentials (do not skip).**
-The public `reddit.com/....json` endpoint works from your laptop but Reddit blocks datacenter IPs, so it fails from GitHub Actions runners. Get free OAuth creds instead:
+**2. Reddit feed token** (2 minutes, no approval needed)
 
-- <https://www.reddit.com/prefs/apps> → *create another app* → type **script** → redirect URI `http://localhost`
-- The string under the app name is your client ID; the `secret` field is the secret.
-- Repo → Settings → Secrets and variables → Actions → add `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET`.
+- Go to <https://www.reddit.com/prefs/feeds/> while logged in
+- Any of the RSS links there contains `?feed=<long-hex-string>&user=<your-username>` — copy both values
+- Secrets: `REDDIT_FEED_TOKEN` = the hex string, `REDDIT_USER` = your username
 
-**3. Optional secrets.**
+Skip this and the build still runs anonymously, but expect heavy throttling and mostly-RSS results.
 
-- `FIRECRAWL_API_KEY` — enables the Know Your Meme tile source. Skip it and everything else still works.
-- `ANTHROPIC_API_KEY` — enables the one-line "what is this" blurbs.
+**3. Imgur** — <https://api.imgur.com/oauth2/addclient> → *OAuth 2 without callback URL*. Copy the **Client ID** only. Secret: `IMGUR_CLIENT_ID`
 
-**4. Run it once.** Actions tab → *Refresh feed* → *Run workflow*. It commits `data/feed.json`. Open your Pages URL.
+**4. Giphy** — <https://developers.giphy.com/dashboard/> → Create an App → **API Key**. Secret: `GIPHY_API_KEY`
 
-**Local dev:** `DRY_RUN=1 node scripts/build-feed.mjs` builds from fixtures, then `npx serve .`
+**5. Optional** — `FIRECRAWL_API_KEY` (Know Your Meme), `ANTHROPIC_API_KEY` (clusters, blurbs, glossary).
+
+**6. Secrets go in** repo → Settings → Secrets and variables → Actions → New repository secret. Names must match exactly:
+
+```
+REDDIT_USER          REDDIT_FEED_TOKEN
+IMGUR_CLIENT_ID      GIPHY_API_KEY
+FIRECRAWL_API_KEY    ANTHROPIC_API_KEY
+```
+
+**7. Run it once.** Actions → *Refresh feed* → Run workflow. Expect ~10 minutes. The log tells you which path each source took (`json` vs `rss fallback`). It commits `data/feed.json` and `data/memory.json`; then open your Pages URL.
+
+Every source is independently optional. Missing keys log a skip line; failures log a warning. The build only hard-fails if *nothing* was fetched, so a bad run can never blank your wall.
+
+**Local dev**
+
+```bash
+node scripts/test.mjs                      # offline parser checks, no keys needed
+DRY_RUN=1 node scripts/build-feed.mjs      # build from fixtures
+npx serve .                                # look at it
+```
 
 ---
 
@@ -97,9 +124,9 @@ Titles only. Never image data, never post bodies, never URLs. Output is compact 
 
 These are the actual techniques, and why each one matters:
 
-1. **Never fetch the full-size image.** Reddit pre-renders every upload at 108/216/320/640/960/1080 px and hands you the whole ladder in the API response. The builder harvests it into a `srcset`, and `sizes="(min-width:1000px) 24vw, 46vw"` lets the browser pick the smallest one that fits its column. On a phone you download the 320px version of a 4 MB image. This alone is the difference between a 40 MB page and a 3 MB page.
+1. **Never fetch the full-size image.** Reddit pre-renders every upload at 108/216/320/640/960/1080 px and hands you the whole ladder in the API response. Imgur does the same thing via URL suffixes (`i.imgur.com/{hash}m.jpg` = 320px, `l` = 640, `h` = 1024). The builder harvests both into a `srcset`, and `sizes="(min-width:1000px) 24vw, 46vw"` lets the browser pick the smallest rung that fits its column. On a phone you download the 320px version of a 4 MB image. This alone is the difference between a 40 MB page and a 3 MB page.
 
-2. **GIFs are never GIFs.** Every animated Reddit post also exists as an mp4 (`preview.reddit_video_preview.fallback_url`) at roughly 5–20× smaller. The wall shows a still frame; the mp4 is fetched **only on hover or tap**. Scrolling past a hundred GIF tiles costs you a hundred small JPEGs, not a hundred videos.
+2. **GIFs are never GIFs.** Every animated post on Reddit, Imgur, and Giphy also exists as an mp4, at roughly 5–20× smaller. The wall shows a still frame; the mp4 is fetched **only on hover or tap**. Scrolling past a hundred GIF tiles costs you a hundred small JPEGs, not a hundred videos.
 
 3. **Reserve the space before the pixels arrive.** Each tile ships `width`/`height` from the API and sets `aspect-ratio` on an empty box. Nothing on the page ever jumps as images load — no cumulative layout shift, no reflow storms while you scroll. This is the single biggest contributor to *feeling* fast.
 
@@ -139,6 +166,7 @@ assets/app.js                 rendering, threads, filtering, lazy media, refresh
 scripts/sources.mjs           ← edit this to change topics/subreddits
 scripts/build-feed.mjs        the fetcher (no dependencies)
 scripts/llm.mjs               ← clustering, blurbs, glossary memory + prompts
+scripts/test.mjs              offline parser checks (no network, no keys)
 scripts/fixtures*.json        sample data for DRY_RUN=1
 .github/workflows/refresh.yml the cron
 data/feed.json                generated output (committed by the bot)
@@ -147,6 +175,9 @@ data/memory.json              the glossary that grows over time (committed)
 
 ## Notes
 
-- The tile grid, chips, sheet, and filtering are verified working against the fixture data; all rendered text is HTML-escaped.
-- If Reddit starts returning 403s, it's almost always the OAuth secrets — the builder falls back to the public endpoint and logs a warning rather than failing the run.
-- `data/feed.json` currently holds fixture data so the page renders before your first real build.
+- The tile grid, chips, thread rail, sheet, and filtering are verified against fixture data; all rendered text is HTML-escaped. `scripts/test.mjs` covers the source parsers.
+- **Keep `data/feed.json` and `data/memory.json` committed.** They're generated, so the instinct is to gitignore them — don't. The feed *is* the website, and wiping `memory.json` makes the glossary re-learn from zero.
+- If Reddit logs `rss fallback` for every subreddit, your feed token isn't being read — check the secret names. RSS still works, you just lose image quality and scores.
+- If a build returns 429s, raise `REDDIT_GAP_MS` or cut subreddits from `sources.mjs`.
+- GitHub's cron is best-effort: a `0 */4 * * *` schedule routinely fires 5–20 minutes late, and pauses entirely if the repo sees no activity for 60 days.
+- `data/feed.json` ships with fixture data so the page renders before your first real build.
