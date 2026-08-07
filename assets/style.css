@@ -17,6 +17,12 @@
 }
 
 *{box-sizing:border-box}
+
+/* The browser's default [hidden]{display:none} has the same specificity as a
+   class selector, so any `.thing{display:grid}` later in this file silently
+   beats it and the element stays visible forever. Everything here that toggles
+   via the `hidden` attribute (#splash, #threads, #empty) needs this. */
+[hidden]{display:none !important}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
