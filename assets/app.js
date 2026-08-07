@@ -18,11 +18,24 @@ const PAGE = 24; // render in chunks — never build 200 DOM nodes at once
 
 /* -------------------------------------------------- load (stale-while-revalidate) */
 
+const BUILD = 'wall-2026-08-07d';
+
 async function load({ bust = false } = {}) {
-  // 1. Paint instantly from the last payload we saw.
-  const cached = sessionStorage.getItem('wall.feed');
-  if (cached && !bust) { apply(JSON.parse(cached), { silent: true }); }
-  else { $('#splash').hidden = false; cycleSplash(); }
+  console.log('[wall] client', BUILD);
+
+  // 1. Paint instantly from the last payload we saw. This MUST be guarded:
+  //    a cached payload in an older shape used to throw here, outside the
+  //    try below, which rejected the promise and left the spinner up forever.
+  let cached = sessionStorage.getItem('wall.feed');
+  if (cached && !bust) {
+    try { apply(JSON.parse(cached), { silent: true }); }
+    catch (e) {
+      console.warn('[wall] discarding unusable cached feed:', e);
+      sessionStorage.removeItem('wall.feed');
+      cached = null;
+    }
+  }
+  if (!cached || bust) { $('#splash').hidden = false; cycleSplash(); }
 
   // 2. Then go get the real thing.
   const url = new URL('./data/feed.json' + (bust ? `?t=${Date.now()}` : ''), location.href).href;
@@ -47,6 +60,11 @@ async function load({ bust = false } = {}) {
   stopSplash();
   $('#splash').hidden = true;
 }
+
+// Nothing may fail silently. Any uncaught error or rejection anywhere in the
+// app surfaces on screen rather than leaving the spinner running.
+addEventListener('error', (e) => fail(e.error || new Error(e.message), location.href));
+addEventListener('unhandledrejection', (e) => fail(e.reason || new Error('unhandled rejection'), location.href));
 
 /** Show the real reason instead of spinning forever. */
 function fail(err, url) {
