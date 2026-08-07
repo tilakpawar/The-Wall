@@ -121,9 +121,9 @@ function drawChips() {
   for (const it of FEED.items) counts[it.topic] = (counts[it.topic] || 0) + 1;
 
   chips.innerHTML = '';
-  const mk = (key, label, n) => {
+  const mk = (key, label, n, arch) => {
     const b = document.createElement('button');
-    b.className = 'chip';
+    b.className = 'chip' + (arch ? ' arc' : '');
     b.setAttribute('aria-pressed', key === '*' ? selected.size === 0 : selected.has(key));
     b.innerHTML = `${label}${n != null ? `<span class="n">${n}</span>` : ''}`;
     b.onclick = () => {
@@ -135,15 +135,27 @@ function drawChips() {
     };
     chips.appendChild(b);
   };
-  mk('*', 'Everything', FEED.items.length);
-  for (const [k, v] of Object.entries(t)) mk(k, `${v.emoji || ''} ${v.label}`.trim(), counts[k] || 0);
+  const live = Object.entries(t).filter(([, v]) => !v.archive);
+  const arch = Object.entries(t).filter(([, v]) => v.archive);
+
+  mk('*', 'Everything', FEED.items.filter((i) => !isArchive(i.topic)).length);
+  for (const [k, v] of live) mk(k, `${v.emoji || ''} ${v.label}`.trim(), counts[k] || 0);
+  for (const [k, v] of arch) mk(k, `${v.emoji || ''} ${v.label}`.trim(), counts[k] || 0, true);
 }
 
 /* ----------------------------------------------------------------- render */
 
+const isArchive = (topic) => !!FEED.topics?.[topic]?.archive;
+
 function visible() {
   let l = FEED.items;
-  if (selected.size) l = l.filter((i) => selected.has(i.topic));
+  if (selected.size) {
+    l = l.filter((i) => selected.has(i.topic));
+  } else {
+    // "Everything" means everything *current*. The archive holds hundreds of
+    // evergreen items and would swamp today's wall — it's opt-in per tab.
+    l = l.filter((i) => !isArchive(i.topic));
+  }
   if (activeThread) l = l.filter((i) => i.cluster === activeThread);
   return l;
 }
@@ -220,7 +232,7 @@ function tile(it, n) {
     img.addEventListener('load', () => { img.classList.add('in'); box.classList.add('done'); }, { once: true });
     img.addEventListener('error', () => { box.remove(); el.classList.add('text'); }, { once: true });
     if (img.complete) img.dispatchEvent(new Event('load'));
-    if (it.kind === 'video' && !saver) hoverVideo(el, box, it);
+    if (it.kind === 'video' && it.video && !saver) attachVideo(el, box, it);
   }
 
   el.onclick = () => openSheet(it);
@@ -229,22 +241,54 @@ function tile(it, n) {
 }
 
 /**
- * GIFs are served as mp4 and only fetched on hover / tap — never on scroll.
- * An unwatched tile costs you one small still image, not a 6 MB GIF.
+ * Animation plays where you're looking, and nowhere else.
+ *
+ * A single observer plays the mp4 for tiles that are properly on screen and
+ * pauses everything else, so you never have to click through to see what a
+ * GIF actually does. Bandwidth stays sane because only visible tiles ever
+ * fetch a video, and data saver turns the whole thing off.
  */
-function hoverVideo(el, box, it) {
-  let v;
-  const start = () => {
-    if (v || !it.video) return;
-    v = document.createElement('video');
-    Object.assign(v, { src: it.video, muted: true, loop: true, playsInline: true, preload: 'auto' });
-    v.style.cssText = 'position:absolute;inset:0';
-    box.appendChild(v);
-    v.play().catch(() => {});
-  };
-  const stop = () => { v?.remove(); v = null; };
-  el.addEventListener('pointerenter', start);
-  el.addEventListener('pointerleave', stop);
+const PLAY_LIMIT = 6;   // most browsers stall past ~8 concurrent videos
+const playing = new Set();
+
+const playObserver = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    const el = e.target;
+    if (e.isIntersecting && e.intersectionRatio > 0.55) startVideo(el);
+    else stopVideo(el);
+  }
+}, { threshold: [0, 0.55, 1], rootMargin: '-8% 0px -8% 0px' });
+
+function startVideo(el) {
+  if (saver || el._v || playing.size >= PLAY_LIMIT) return;
+  const { box, item } = el._media || {};
+  if (!item?.video) return;
+
+  const v = document.createElement('video');
+  Object.assign(v, { src: item.video, muted: true, loop: true, playsInline: true, preload: 'auto', autoplay: true });
+  v.setAttribute('aria-hidden', 'true');
+  v.style.cssText = 'position:absolute;inset:0;opacity:0;transition:opacity .3s var(--ease,ease)';
+  v.addEventListener('playing', () => { v.style.opacity = '1'; el.classList.add('is-playing'); }, { once: true });
+  box.appendChild(v);
+  v.play().catch(() => {});      // autoplay can still be refused; the still stays
+  el._v = v;
+  playing.add(el);
+}
+
+function stopVideo(el) {
+  if (!el._v) return;
+  el._v.pause();
+  el._v.remove();
+  el._v = null;
+  el.classList.remove('is-playing');
+  playing.delete(el);
+}
+
+function attachVideo(el, box, it) {
+  el._media = { box, item: it };
+  playObserver.observe(el);
+  // Desktop hover still forces playback even if the tile is only half visible.
+  el.addEventListener('pointerenter', () => startVideo(el));
 }
 
 /* ------------------------------------------------------------------ sheet */
@@ -253,7 +297,34 @@ const sheet = $('#sheet');
 $('#sheetClose').onclick = () => sheet.close();
 sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.close(); });
 
-function openSheet(it) {
+/* Browse without closing: ← → , swipe, or the on-screen arrows. */
+let sheetIndex = -1;
+
+function step(delta) {
+  const list = visible();
+  const next = sheetIndex + delta;
+  if (next < 0 || next >= list.length) return;
+  openSheet(list[next], next);
+}
+
+addEventListener('keydown', (e) => {
+  if (!sheet.open) return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+});
+
+let touchX = null;
+sheet.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+sheet.addEventListener('touchend', (e) => {
+  if (touchX == null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  touchX = null;
+  if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
+}, { passive: true });
+
+function openSheet(it, index) {
+  const list = visible();
+  sheetIndex = index ?? list.indexOf(it);
   const thread = (FEED.clusters || []).find((c) => c.id === it.cluster);
 
   // Glossary entries the build has learned. A format seen many times has a
@@ -279,8 +350,8 @@ function openSheet(it) {
       ${it.ts ? `<span class="sep">·</span><span>${relTime(new Date(it.ts * 1000))}</span>` : ''}
     </div>
     ${it.kind === 'video' && it.video
-      ? `<video src="${esc(it.video)}" autoplay muted loop playsinline></video>`
-      : it.src ? `<img src="${esc(it.src)}" alt="">` : ''}
+      ? `<video src="${esc(it.video)}" autoplay muted loop playsinline controls></video>`
+      : it.src ? `<img src="${esc(it.srcFull || it.src)}" alt="" loading="eager">` : ''}
     ${(it.body || it.blurb) ? `<p class="ctx">${esc(it.body || it.blurb)}</p>` : ''}
     ${it.comment ? `<figure class="says">
       <blockquote>${esc(it.comment)}</blockquote>
@@ -289,7 +360,24 @@ function openSheet(it) {
     ${glossHtml}
     ${it.tags?.length ? `<div class="tags">${it.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}
     <a class="go" href="${esc(it.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>`;
-  sheet.showModal();
+
+  // Navigation lives outside the scrolling body so it stays put.
+  let nav = sheet.querySelector('.nav');
+  if (!nav) {
+    nav = document.createElement('nav');   // not a <div>: `.sheet > div` is the card
+    nav.className = 'nav';
+    nav.innerHTML = `<button data-d="-1" aria-label="Previous">‹</button>
+                     <span class="pos"></span>
+                     <button data-d="1" aria-label="Next">›</button>`;
+    nav.onclick = (e) => { const b = e.target.closest('button'); if (b) step(+b.dataset.d); };
+    sheet.appendChild(nav);
+  }
+  nav.querySelector('.pos').textContent = `${sheetIndex + 1} / ${list.length}`;
+  nav.querySelector('[data-d="-1"]').disabled = sheetIndex <= 0;
+  nav.querySelector('[data-d="1"]').disabled = sheetIndex >= list.length - 1;
+
+  if (!sheet.open) sheet.showModal();
+  sheet.querySelector('div').scrollTop = 0;
 }
 
 /* --------------------------------------------------- live top-up + refresh */

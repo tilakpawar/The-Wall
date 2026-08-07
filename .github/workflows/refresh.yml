@@ -31,13 +31,16 @@ jobs:
 
       # The glossary lives on an orphan branch that only ever holds one commit,
       # so it persists across builds without growing the repo's history.
-      - name: Restore glossary memory
+      - name: Restore glossary + archive
         run: |
           mkdir -p data
           git fetch origin state 2>/dev/null || echo "no state branch yet — first run"
           git show origin/state:memory.json > data/memory.json 2>/dev/null \
             || echo '{"version":1,"glossary":{},"annotated":{}}' > data/memory.json
-          echo "memory: $(wc -c < data/memory.json) bytes"
+          git show origin/state:archive.json > data/archive.json 2>/dev/null \
+            || echo '{"version":1,"items":[]}' > data/archive.json
+          echo "memory:  $(wc -c < data/memory.json) bytes"
+          echo "archive: $(wc -c < data/archive.json) bytes"
 
       - name: Build feed
         env:
@@ -52,16 +55,16 @@ jobs:
 
       # Force-push a single-commit branch. History never grows; no merge
       # conflicts, because nothing generated ever lands on main.
-      - name: Persist glossary memory
+      - name: Persist glossary + archive
         run: |
           tmp=$(mktemp -d)
-          cp data/memory.json "$tmp/memory.json"
+          cp data/memory.json data/archive.json "$tmp/"
           cd "$tmp"
           git init -q -b state
           git config user.name  "wall-bot"
           git config user.email "wall-bot@users.noreply.github.com"
-          git add memory.json
-          git commit -q -m "glossary as of $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git add memory.json archive.json
+          git commit -q -m "state as of $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" state
 
       - name: Assemble site

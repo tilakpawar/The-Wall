@@ -91,6 +91,33 @@ npx serve .                                # look at it
 
 ---
 
+## Two kinds of tab
+
+**Live tabs** (Memes, Meme origins, Viral & drama, Tech) rotate. Each build replaces them with what's trending now.
+
+**Archive tabs** (Hall of fame, Bollywood, India) accumulate. Every build merges what it finds into `data/archive.json` and **nothing is ever removed** — a classic format found in March is still there in December. Only when the collection passes 1,500 items do the oldest additions drop off.
+
+They're marked with dashed outlines in the chip row and excluded from "Everything", since hundreds of evergreen items would otherwise swamp today's wall. The archive lives on the `state` branch next to the glossary, so it survives builds without touching `main`.
+
+Sources are chosen for permanence:
+
+- **Imgflip** `get_memes` — the 100 canonical meme templates (Drake, Distracted Boyfriend, This Is Fine), with exact dimensions and a caption count used as a popularity score. No key. These link out to Know Your Meme rather than back to a blank template, because if you tap a classic format you want its origin story.
+- **Giphy *search*** (not trending) for Bollywood reactions and specific formats
+- **Imgur search**, and news RSS for India
+
+Edit the queries in `ARCHIVE_TOPICS` in `scripts/sources.mjs`.
+
+**Tenor is not an option.** Google froze new API registrations in January 2026 and discontinued the service on 30 June 2026. Any key obtained now would be dead.
+
+## Seeing things without leaving
+
+The point is not having to open every link:
+
+- **GIFs play where you're looking.** An `IntersectionObserver` starts the mp4 when a tile is >55% on screen and stops it when it isn't, capped at 6 at once so the browser doesn't stall. Only visible tiles ever fetch a video, so scrolling past a hundred still costs a hundred small stills.
+- **Arrow through the wall.** The detail panel has ← → keys, on-screen arrows, swipe on mobile, and a position counter. You can browse the whole feed without closing it once.
+- **Full media, uncropped.** The panel shows the image at its real aspect ratio up to 62vh, and video gets controls. The source link is there for the full thread, not for seeing the basics.
+- **Data saver** (top-right) disables all video and remembers the choice.
+
 ## Context without a model (`scripts/context.mjs`)
 
 The expanded panel gets real explanations before any model is involved, because the good ones are already written by humans:
@@ -179,7 +206,8 @@ Refresh now dispatches `refresh.yml` and the new feed lands ~2 minutes later. An
 index.html                    markup + preconnect hints
 assets/style.css              the whole design system
 assets/app.js                 rendering, threads, filtering, lazy media, refresh
-scripts/sources.mjs           ← edit this to change topics/subreddits
+scripts/sources.mjs           ← edit this to change topics, communities, archive queries
+scripts/archive.mjs           the accumulating collection (merge, never delete)
 scripts/build-feed.mjs        the fetcher (no dependencies)
 scripts/llm.mjs               ← clustering, blurbs, glossary memory + prompts
 scripts/test.mjs              offline parser checks (no network, no keys)

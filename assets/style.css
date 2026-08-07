@@ -148,6 +148,17 @@ body::before{
 }
 .chip .n{opacity:.45;margin-left:6px;font-variant-numeric:tabular-nums}
 
+/* Archive tabs read as a separate shelf: collections, not today's news. */
+.chip.arc{
+  border-style:dashed;
+  border-color:color-mix(in srgb, var(--accent) 45%, transparent);
+  color:color-mix(in oklab, var(--accent) 62%, var(--fg));
+}
+.chip.arc:hover{border-color:var(--accent)}
+.chip.arc[aria-pressed="true"]{
+  background:var(--accent);color:#fff;border-style:solid;border-color:var(--accent);
+}
+
 /* --------------------------------------------------------- thread rail */
 .threads{
   display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;
@@ -238,12 +249,16 @@ body::before{
 .media img.in{opacity:1}
 
 .badge{
-  position:absolute;left:10px;top:10px;z-index:2;
+  position:absolute;left:10px;top:10px;z-index:3;
   padding:3px 7px;border-radius:6px;
   font:650 10px/1.35 -apple-system,system-ui,sans-serif;letter-spacing:.05em;
   background:rgba(0,0,0,.5);color:#fff;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:opacity .25s var(--ease);
 }
+/* Once it's actually moving, the "GIF" label is noise. */
+.tile.is-playing .badge{opacity:0}
+.media video{z-index:2}
 
 .body{padding:13px 14px 15px}
 .ttl{
@@ -336,7 +351,30 @@ body::before{
   transition:opacity .2s var(--ease);
 }
 .sheet .go:hover{opacity:.85}
-.sheet img,.sheet video{width:100%;border-radius:14px;margin-top:16px;display:block}
+/* Full media, never cropped — the whole point is not having to leave. */
+.sheet img,.sheet video{
+  width:100%;height:auto;max-height:62vh;object-fit:contain;
+  border-radius:14px;margin-top:16px;display:block;background:var(--bg2);
+}
+
+/* Browse without closing */
+.sheet .nav{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-top:12px;
+}
+.sheet .nav button{
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line2);
+  background:var(--card);color:var(--fg);
+  font-size:20px;line-height:1;cursor:pointer;
+  transition:background .2s var(--ease), opacity .2s var(--ease), transform .2s var(--ease);
+}
+.sheet .nav button:hover:not(:disabled){background:var(--bg2)}
+.sheet .nav button:active:not(:disabled){transform:scale(.92)}
+.sheet .nav button:disabled{opacity:.3;cursor:default}
+.sheet .nav .pos{
+  font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums;
+  min-width:64px;text-align:center;letter-spacing:.01em;
+}
 
 /* top comment — the human explanation, no model involved */
 .says{margin:20px 0 0;padding:0}

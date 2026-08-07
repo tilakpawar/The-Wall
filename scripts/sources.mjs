@@ -36,7 +36,54 @@ export const TOPICS = {
   },
 };
 
+/* ------------------------------------------------------------- archive
+ * These topics ACCUMULATE. Items are merged into data/archive.json and never
+ * dropped, so the collection grows every build instead of rotating. Good for
+ * things that don't expire: classic formats, film reaction GIFs, events.
+ */
+export const ARCHIVE_TOPICS = {
+  classics: {
+    label: 'Hall of fame',
+    emoji: '🏛️',
+    archive: true,
+    imgflip: true,   // 100 canonical meme templates, no key
+    giphySearch: [
+      'distracted boyfriend meme', 'drake meme', 'this is fine', 'surprised pikachu',
+      'roll safe', 'woman yelling at cat', 'galaxy brain', 'stonks',
+      'confused math lady', 'side eye', 'mocking spongebob',
+    ],
+    imgurSearch: ['classic meme'],
+  },
+  bollywood: {
+    label: 'Bollywood',
+    emoji: '🎬',
+    archive: true,
+    giphySearch: [
+      'bollywood', 'shah rukh khan', 'desi', 'bollywood dance', 'amitabh bachchan',
+      'bollywood reaction', 'indian tv serial', 'nawazuddin', 'kapoor',
+    ],
+    rss: [
+      ['https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms', 'Times of India · Entertainment'],
+    ],
+  },
+  india: {
+    label: 'India',
+    emoji: '🇮🇳',
+    archive: true,
+    rss: [
+      ['https://timesofindia.indiatimes.com/rssfeedstopstories.cms', 'Times of India'],
+      ['https://feeds.feedburner.com/ndtvnews-top-stories', 'NDTV'],
+      ['https://www.thehindu.com/news/national/feeder/default.rss', 'The Hindu'],
+    ],
+  },
+};
+
 export const PER_TOPIC_CAP = 40;
+
+// Archive caps. Nothing is removed until the collection passes MAX, and even
+// then only the oldest additions go.
+export const ARCHIVE_MAX = 1500;
+export const ARCHIVE_PER_QUERY = 12;
 
 /* -------------------------------------------------------------- lemmy */
 // Any Lemmy instance can serve federated communities. lemmy.world is the

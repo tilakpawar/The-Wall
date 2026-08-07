@@ -18,17 +18,19 @@ import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  TOPICS, PER_TOPIC_CAP,
+  TOPICS, ARCHIVE_TOPICS, PER_TOPIC_CAP, ARCHIVE_PER_QUERY,
   LEMMY_HOST, LEMMY_SORT, LEMMY_LIMIT, LEMMY_GAP_MS,
   IMGUR_PAGES, GIPHY_LIMIT, BLUESKY_FEED, BLUESKY_LIMIT,
   REDDIT_GAP_MS, REDDIT_WINDOW, REDDIT_LIMIT,
 } from './sources.mjs';
 import { loadMemory, saveMemory, enrich } from './llm.mjs';
 import { addComments } from './context.mjs';
+import { loadArchive, saveArchive, mergeArchive } from './archive.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'data/feed.json');
 const MEM = resolve(ROOT, 'data/memory.json');
+const ARC = resolve(ROOT, 'data/archive.json');
 const UA = 'thewall/3.0 (personal reading dashboard; +https://github.com/)';
 
 const log = (...a) => console.log('·', ...a);
@@ -248,27 +250,33 @@ async function imgur() {
     } catch (e) { warn('imgur failed:', e.message); break; }
 
     for (const it of items) {
-      if (it.nsfw || (it.is_album && !it.cover)) continue;
-      const hash = it.is_album ? it.cover : it.id;
-      if (!hash || !it.title) continue;
-      const ext = it.type === 'image/png' ? 'png' : 'jpg';
-      out.push(item({
-        id: 'im_' + it.id, source: 'Imgur',
-        sourceUrl: it.link || `https://imgur.com/gallery/${it.id}`,
-        title: it.title.trim(), score: it.ups ?? it.points, comments: it.comment_count,
-        ts: it.datetime, body: it.description || '',
-        kind: it.animated ? 'video' : 'image',
-        src: `https://i.imgur.com/${hash}l.${ext}`,
-        srcset: IMGUR_SIZES.map(([s, px]) => `https://i.imgur.com/${hash}${s}.${ext} ${px}w`).join(', '),
-        w: it.is_album ? it.cover_width : it.width,
-        h: it.is_album ? it.cover_height : it.height,
-        video: it.animated ? (it.mp4 || `https://i.imgur.com/${hash}.mp4`) : null,
-      }));
+      const mapped = imgurItem(it);
+      if (mapped) out.push(mapped);
     }
     await sleep(400);
   }
   log(`imgur: ${out.length} items`);
   return out;
+}
+
+/** Shared mapper for the viral gallery + search. */
+function imgurItem(it) {
+  if (it.nsfw || (it.is_album && !it.cover)) return null;
+  const hash = it.is_album ? it.cover : it.id;
+  if (!hash || !it.title) return null;
+  const ext = it.type === 'image/png' ? 'png' : 'jpg';
+  return item({
+    id: 'im_' + it.id, source: 'Imgur',
+    sourceUrl: it.link || `https://imgur.com/gallery/${it.id}`,
+    title: it.title.trim(), score: it.ups ?? it.points, comments: it.comment_count,
+    ts: it.datetime, body: it.description || '',
+    kind: it.animated ? 'video' : 'image',
+    src: `https://i.imgur.com/${hash}l.${ext}`,
+    srcset: IMGUR_SIZES.map(([s, px]) => `https://i.imgur.com/${hash}${s}.${ext} ${px}w`).join(', '),
+    w: it.is_album ? it.cover_width : it.width,
+    h: it.is_album ? it.cover_height : it.height,
+    video: it.animated ? (it.mp4 || `https://i.imgur.com/${hash}.mp4`) : null,
+  });
 }
 
 /* ===================================================================== giphy */
@@ -280,26 +288,108 @@ async function giphy() {
     const r = await get(`https://api.giphy.com/v1/gifs/trending?api_key=${key}&limit=${GIPHY_LIMIT}&rating=pg-13`);
     if (!r.ok) { warn(`giphy -> ${r.status}`); return []; }
     const data = (await r.json())?.data || [];
-    const out = data.map((g) => {
-      const i = g.images || {};
-      // Use a 480px rung as the display size — 200px looks soft on a desktop wall.
-      const still = i.downsized_still || i['480w_still'] || i.fixed_width_still;
-      const small = i.fixed_width_small_still;
-      const mp4 = i.downsized_small?.mp4 || i.fixed_width?.mp4 || i.original_mp4?.mp4;
-      return item({
-        id: 'gp_' + g.id, source: 'Giphy', sourceUrl: g.url,
-        title: (g.title || '').replace(/\s*GIF\s*(by .+)?$/i, '').trim() || 'Trending GIF',
-        ts: Math.floor(new Date(g.trending_datetime || g.import_datetime || Date.now()).getTime() / 1000) || undefined,
-        kind: 'video',
-        src: still?.url || null,
-        srcset: [small && `${small.url} ${small.width}w`, still?.width && `${still.url} ${still.width}w`].filter(Boolean).join(', ') || null,
-        w: Number(still?.width) || null, h: Number(still?.height) || null,
-        video: mp4 || null,
-      });
-    }).filter((g) => g.src && g.video);
+    const out = data.map(giphyItem).filter((g) => g.src && g.video);
     log(`giphy: ${out.length} items`);
     return out;
   } catch (e) { warn('giphy failed:', e.message); return []; }
+}
+
+/* ============================================================ giphy search
+ * Same free key as trending. Search is what makes the archive topics work:
+ * "bollywood", "distracted boyfriend" and friends return the same evergreen
+ * material every time, which is exactly what an accumulating tab wants.
+ */
+
+async function giphySearch(q, limit = ARCHIVE_PER_QUERY) {
+  const key = process.env.GIPHY_API_KEY;
+  if (!key) return [];
+  try {
+    const r = await get(`https://api.giphy.com/v1/gifs/search`
+      + `?api_key=${key}&q=${encodeURIComponent(q)}&limit=${limit}&rating=pg-13&lang=en`);
+    if (!r.ok) { warn(`giphy search "${q}" -> ${r.status}`); return []; }
+    const out = ((await r.json())?.data || []).map(giphyItem).filter((g) => g.src && g.video);
+    for (const g of out) g.query = q;
+    return out;
+  } catch (e) { warn(`giphy search "${q}" failed:`, e.message); return []; }
+}
+
+/** Shared mapper for trending + search. */
+function giphyItem(g) {
+  const i = g.images || {};
+  const still = i.downsized_still || i['480w_still'] || i.fixed_width_still;
+  const small = i.fixed_width_small_still;
+  const mp4 = i.downsized_small?.mp4 || i.fixed_width?.mp4 || i.original_mp4?.mp4;
+  return item({
+    id: 'gp_' + g.id, source: 'Giphy', sourceUrl: g.url,
+    title: (g.title || '').replace(/\s*GIF\s*(by .+)?$/i, '').trim() || 'GIF',
+    ts: Math.floor(new Date(g.trending_datetime || g.import_datetime || Date.now()).getTime() / 1000) || undefined,
+    kind: 'video',
+    src: still?.url || null,
+    srcset: [small && `${small.url} ${small.width}w`, still?.width && `${still.url} ${still.width}w`].filter(Boolean).join(', ') || null,
+    w: Number(still?.width) || null, h: Number(still?.height) || null,
+    video: mp4 || null,
+  });
+}
+
+/* ============================================================ imgur search */
+
+async function imgurSearch(q, limit = ARCHIVE_PER_QUERY) {
+  const id = process.env.IMGUR_CLIENT_ID;
+  if (!id) return [];
+  try {
+    const r = await get(`https://api.imgur.com/3/gallery/search/top/all/?q=${encodeURIComponent(q)}`,
+      { Authorization: `Client-ID ${id}` });
+    if (!r.ok) { warn(`imgur search "${q}" -> ${r.status}`); return []; }
+    return ((await r.json())?.data || []).filter((it) => !it.nsfw && it.title)
+      .slice(0, limit).map(imgurItem).filter(Boolean);
+  } catch (e) { warn(`imgur search "${q}" failed:`, e.message); return []; }
+}
+
+/* ================================================================== imgflip
+ * The canonical list of classic meme formats — Drake, Distracted Boyfriend,
+ * This Is Fine, Surprised Pikachu. No key, no rate limit, and it comes with
+ * exact dimensions plus a caption count that works as a popularity score.
+ *
+ * These are blank templates, so the link points at Know Your Meme rather than
+ * back to Imgflip: if you tap a classic format, you want its origin story.
+ */
+
+async function imgflip() {
+  try {
+    const r = await get('https://api.imgflip.com/get_memes');
+    if (!r.ok) { warn(`imgflip -> ${r.status}`); return []; }
+    const memes = (await r.json())?.data?.memes || [];
+    const out = memes.map((m) => item({
+      id: 'if_' + m.id,
+      source: 'Classic format',
+      sourceUrl: `https://knowyourmeme.com/search?q=${encodeURIComponent(m.name)}`,
+      title: m.name,
+      score: m.captions || null,
+      body: m.captions
+        ? `A classic template — used in ${Number(m.captions).toLocaleString()} captions on Imgflip.`
+        : '',
+      kind: 'image',
+      src: m.url,
+      w: m.width, h: m.height,
+    }));
+    log(`imgflip: ${out.length} classic formats`);
+    return out;
+  } catch (e) { warn('imgflip failed:', e.message); return []; }
+}
+
+/* ================================================================ rss feeds
+ * Generic news feeds for the India / Bollywood tabs. Each is independent —
+ * a dead feed logs a warning and the rest carry on.
+ */
+
+async function rssFeed(url, name) {
+  try {
+    const r = await get(url);
+    if (!r.ok) { warn(`${name} -> ${r.status}`); return []; }
+    const out = parseRss(await r.text(), name, 'rs_').slice(0, 20);
+    log(`  ${name}: ${out.length}`);
+    return out;
+  } catch (e) { warn(`${name} failed:`, e.message); return []; }
 }
 
 /* =============================================================== hackernews */
@@ -406,21 +496,64 @@ async function main() {
   const memory = await loadMemory(MEM);
   const { clusters, glossary } = await enrich(woven, memory);
   await saveMemory(MEM, memory);
-  await write(woven, { clusters, glossary });
+
+  // The accumulating tabs. Fetched separately, merged into a growing
+  // collection, and never rotated out.
+  const archive = await loadArchive(ARC);
+  const archived = await buildArchive(archive);
+  await saveArchive(ARC, archive);
+
+  await write(woven, { clusters, glossary, archive: archived });
+}
+
+/** Fetch evergreen material and merge it into the persistent archive. */
+async function buildArchive(archive) {
+  const fresh = [];
+
+  for (const [topic, cfg] of Object.entries(ARCHIVE_TOPICS)) {
+    const bucket = [];
+
+    if (cfg.imgflip) bucket.push(...(await imgflip()));
+    for (const q of cfg.giphySearch || []) {
+      bucket.push(...(await giphySearch(q)));
+      await sleep(250);
+    }
+    for (const q of cfg.imgurSearch || []) {
+      bucket.push(...(await imgurSearch(q)));
+      await sleep(250);
+    }
+    for (const [url, name] of cfg.rss || []) {
+      bucket.push(...(await rssFeed(url, name)));
+    }
+
+    for (const it of bucket) it.topic = topic;
+    log(`${topic} (archive): ${bucket.length} fetched`);
+    fresh.push(...bucket);
+  }
+
+  mergeArchive(archive, fresh);
+  return archive.items;
 }
 
 async function write(items, extra = {}) {
   await mkdir(dirname(OUT), { recursive: true });
+  const archive = extra.archive || [];
+  const all = [...items, ...archive];
+
+  const meta = (t) => Object.fromEntries(Object.entries(t).map(([k, v]) =>
+    [k, { label: v.label, emoji: v.emoji, archive: !!v.archive }]));
+
   const payload = {
     generatedAt: new Date().toISOString(),
-    topics: Object.fromEntries(Object.entries(TOPICS).map(([k, v]) => [k, { label: v.label, emoji: v.emoji }])),
+    topics: { ...meta(TOPICS), ...meta(ARCHIVE_TOPICS) },
     clusters: extra.clusters || [], glossary: extra.glossary || {},
-    count: items.length, items,
+    count: all.length, items: all,
   };
   await writeFile(OUT, JSON.stringify(payload));
   const kb = (Buffer.byteLength(JSON.stringify(payload)) / 1024).toFixed(1);
-  const withImg = items.filter((i) => i.src).length;
-  log(`wrote data/feed.json — ${items.length} items (${withImg} with images), ${payload.clusters.length} clusters, ${kb} KB`);
+  const withImg = all.filter((i) => i.src).length;
+  log(`wrote data/feed.json — ${items.length} live + ${archive.length} archived `
+    + `(${withImg} with media), ${payload.clusters.length} clusters, ${kb} KB`);
 }
 
 async function dryRun() {
@@ -438,4 +571,7 @@ async function dryRun() {
 
 if (!process.env.NO_MAIN) main().catch((e) => { console.error(e); process.exit(1); });
 
-export { lemmy, parseRss, wikipedia, bluesky, imgur, giphy, fromRedditJson, pictSrcset };
+export {
+  lemmy, parseRss, wikipedia, bluesky, imgur, giphy, fromRedditJson, pictSrcset,
+  imgflip, giphySearch, imgurSearch, rssFeed,
+};
