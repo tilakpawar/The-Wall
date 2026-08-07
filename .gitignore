@@ -1,2 +1,8 @@
 node_modules
 .DS_Store
+
+# Generated every build and published straight to Pages as an artifact.
+# Nothing in here belongs in git — that's what kept causing merge conflicts
+# and would have grown the repo ~60 MB/year.
+data/
+_site/

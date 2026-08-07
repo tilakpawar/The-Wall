@@ -9,16 +9,22 @@ No framework, no build step, no npm dependencies. A GitHub Action refreshes the 
 ## How it actually works
 
 ```
-GitHub Action (cron, every 4h)          GitHub Pages (static)
-  ├─ Reddit OAuth API  ──┐
-  ├─ Hacker News API   ──┤                index.html
-  ├─ Know Your Meme    ──┼─► feed.json ─► assets/app.js ─► the wall
-  │    (via Firecrawl)   │      (~120 KB)      │
-  └─ 1× Haiku call     ──┘                     └─ live top-up: HN API direct
-       (adds context blurbs)
+GitHub Action (cron, every 4h)              GitHub Pages
+  ├─ Reddit (.json / .rss) ──┐
+  ├─ Imgur + Giphy         ──┤
+  ├─ Hacker News           ──┼─► _site/ ──► uploaded as an artifact ──► the wall
+  ├─ Know Your Meme        ──┤   (html + css + js + feed.json)
+  │    (via Firecrawl)       │
+  └─ 2× Haiku calls        ──┘
+       clusters, blurbs, glossary
+              │
+              └─► memory.json ──► force-pushed to the `state` branch
+                                   (always exactly one commit)
 ```
 
-**Why this shape.** GitHub Pages serves static files only — there is no server to hide an API key in. So all keyed work happens inside the Action, where secrets are safe, and the browser only ever downloads a plain JSON file. Consequences: the page loads in well under a second, costs nothing per view, and works offline-ish from cache.
+**Why this shape.** GitHub Pages serves static files only — there is no server to hide an API key in. So all keyed work happens inside the Action, where secrets are safe, and the browser only ever downloads a plain JSON file. The page loads in well under a second and costs nothing per view.
+
+**Nothing generated is committed to `main`.** The site is uploaded straight to Pages as a build artifact, so `feed.json` never enters git. The only state that must survive between builds is the glossary, and that lives on an orphan `state` branch that gets force-pushed to a single commit each time. Net effect: repo size stays flat forever, the commit log stays readable, and `git pull` never conflicts on generated files.
 
 The **refresh button** re-fetches `feed.json` (cache-busted) and picks up new Hacker News items live. Optionally it can also trigger a full rebuild — see *Force rebuild* below.
 
@@ -50,7 +56,7 @@ Edit `scripts/sources.mjs` to change topics, subreddits, or the request gap. Not
 
 ## Setup
 
-**1. Push to a repo**, then Settings → Pages → Source: *Deploy from a branch*, `main` / root. Public repo — Actions minutes are unlimited there and metered on private.
+**1. Push to a repo**, then Settings → Pages → Source: **GitHub Actions** (not "Deploy from a branch"). Public repo — Actions minutes are unlimited there and metered on private.
 
 **2. Reddit feed token** (2 minutes, no approval needed)
 
@@ -176,7 +182,9 @@ data/memory.json              the glossary that grows over time (committed)
 ## Notes
 
 - The tile grid, chips, thread rail, sheet, and filtering are verified against fixture data; all rendered text is HTML-escaped. `scripts/test.mjs` covers the source parsers.
-- **Keep `data/feed.json` and `data/memory.json` committed.** They're generated, so the instinct is to gitignore them — don't. The feed *is* the website, and wiping `memory.json` makes the glossary re-learn from zero.
+- `data/` is gitignored. Locally it holds whatever your last `DRY_RUN` produced; in CI it's rebuilt from scratch each time, with `memory.json` restored from the `state` branch.
+- To read or hand-edit the glossary: `git show origin/state:memory.json`. To wipe it and start learning fresh, delete the `state` branch.
+- If the page loads but shows an error card instead of tiles, it names the actual failure and the URL it tried — no guessing.
 - If Reddit logs `rss fallback` for every subreddit, your feed token isn't being read — check the secret names. RSS still works, you just lose image quality and scores.
 - If a build returns 429s, raise `REDDIT_GAP_MS` or cut subreddits from `sources.mjs`.
 - GitHub's cron is best-effort: a `0 */4 * * *` schedule routinely fires 5–20 minutes late, and pauses entirely if the repo sees no activity for 60 days.

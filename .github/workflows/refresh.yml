@@ -4,21 +4,26 @@ on:
   schedule:
     # Every 4 hours. Cheap, and the internet doesn't move faster than that.
     - cron: '0 */4 * * *'
-  workflow_dispatch:        # lets the in-page "refresh" button trigger a rebuild
+  workflow_dispatch:        # manual "Run workflow" button
   push:
     branches: [main]
-    paths: ['scripts/**', '.github/workflows/**']
 
+# Pages deployment needs id-token; the memory branch needs contents.
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: refresh
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Reddit is rate-limited to ~1 request/minute, so the build deliberately
+    # crawls. Nobody is waiting on it.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -26,18 +31,60 @@ jobs:
         with:
           node-version: 20
 
+      # The glossary lives on an orphan branch that only ever holds one commit,
+      # so it persists across builds without growing the repo's history.
+      - name: Restore glossary memory
+        run: |
+          mkdir -p data
+          git fetch origin state 2>/dev/null || echo "no state branch yet — first run"
+          git show origin/state:memory.json > data/memory.json 2>/dev/null \
+            || echo '{"version":1,"glossary":{},"annotated":{}}' > data/memory.json
+          echo "memory: $(wc -c < data/memory.json) bytes"
+
       - name: Build feed
         env:
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER: ${{ secrets.REDDIT_USER }}
+          REDDIT_FEED_TOKEN: ${{ secrets.REDDIT_FEED_TOKEN }}
+          IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
+          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/build-feed.mjs
 
-      - name: Commit if changed
+      # Force-push a single-commit branch. History never grows; no merge
+      # conflicts, because nothing generated ever lands on main.
+      - name: Persist glossary memory
         run: |
+          tmp=$(mktemp -d)
+          cp data/memory.json "$tmp/memory.json"
+          cd "$tmp"
+          git init -q -b state
           git config user.name  "wall-bot"
           git config user.email "wall-bot@users.noreply.github.com"
-          git add data/feed.json data/memory.json
-          git diff --staged --quiet || git commit -m "feed: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          git add memory.json
+          git commit -q -m "glossary as of $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" state
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets _site/
+          mkdir -p _site/data
+          cp data/feed.json _site/data/
+          touch _site/.nojekyll
+          du -sh _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
