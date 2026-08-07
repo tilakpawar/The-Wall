@@ -13,6 +13,8 @@ let FEED = { items: [], topics: {}, clusters: [], glossary: {} };
 let selected = new Set(JSON.parse(localStorage.getItem(LS.topics) || '[]'));
 let activeThread = null;
 let saver = localStorage.getItem(LS.saver) === '1';
+let tuned = localStorage.getItem('wall.tuned') !== '0';   // on by default
+let openedAt = 0, openedItem = null;
 let cursor = 0;
 const PAGE = 24; // render in chunks — never build 200 DOM nodes at once
 
@@ -147,6 +149,69 @@ function drawChips() {
 
 const isArchive = (topic) => !!FEED.topics?.[topic]?.archive;
 
+/* ------------------------------------------------------------ your taste
+ * There's no server and no account, so personalization is built from the only
+ * honest signal available: what you actually open, and for how long. It lives
+ * in localStorage and never leaves the browser.
+ *
+ * Opening an item credits its topic, source and tags. Lingering credits them
+ * more. Scores decay each day so last month's obsession stops dominating.
+ */
+const TASTE_KEY = 'wall.taste';
+const DECAY = 0.985;          // per day — roughly a 6-week half-life
+const DWELL_BONUS_MS = 8000;
+
+let taste = loadTaste();
+
+function loadTaste() {
+  try {
+    const t = JSON.parse(localStorage.getItem(TASTE_KEY) || '{}');
+    const days = (Date.now() - (t.at || Date.now())) / 864e5;
+    if (days > 0.5) {
+      const f = DECAY ** days;
+      for (const dim of ['topic', 'source', 'tag']) {
+        for (const k in t[dim] || {}) {
+          t[dim][k] *= f;
+          if (t[dim][k] < 0.05) delete t[dim][k];
+        }
+      }
+      t.at = Date.now();
+    }
+    return { topic: {}, source: {}, tag: {}, opens: 0, at: Date.now(), ...t };
+  } catch { return { topic: {}, source: {}, tag: {}, opens: 0, at: Date.now() }; }
+}
+
+const saveTaste = () => { try { localStorage.setItem(TASTE_KEY, JSON.stringify(taste)); } catch {} };
+
+function credit(it, weight) {
+  if (!it) return;
+  taste.topic[it.topic] = (taste.topic[it.topic] || 0) + weight;
+  taste.source[it.source] = (taste.source[it.source] || 0) + weight * 0.7;
+  for (const t of it.tags || []) taste.tag[t] = (taste.tag[t] || 0) + weight * 0.5;
+  taste.opens = (taste.opens || 0) + (weight > 0 ? 1 : 0);
+  saveTaste();
+}
+
+/** How well does this item match what you keep opening? */
+function affinity(it) {
+  const norm = (o) => {
+    const max = Math.max(1, ...Object.values(o));
+    return (k) => (o[k] || 0) / max;
+  };
+  const nt = norm(taste.topic), ns = norm(taste.source), ng = norm(taste.tag);
+  const tags = (it.tags || []).reduce((s, t) => s + ng(t), 0) / Math.max(1, (it.tags || []).length);
+  return nt(it.topic) * 1.0 + ns(it.source) * 0.6 + tags * 0.8;
+}
+
+/** Interleave by affinity without collapsing into one topic. */
+function rank(list) {
+  if (!tuned || (taste.opens || 0) < 5) return list;   // stay neutral until there's signal
+  return list
+    .map((it, i) => ({ it, i, s: affinity(it) - i * 0.004 }))   // keep some original order
+    .sort((a, b) => b.s - a.s)
+    .map((x) => x.it);
+}
+
 function visible() {
   let l = FEED.items;
   if (selected.size) {
@@ -157,7 +222,7 @@ function visible() {
     l = l.filter((i) => !isArchive(i.topic));
   }
   if (activeThread) l = l.filter((i) => i.cluster === activeThread);
-  return l;
+  return rank(l);
 }
 
 function reset() {
@@ -212,6 +277,25 @@ function tile(it, n) {
 
   const thread = !activeThread && it.cluster
     ? (FEED.clusters || []).find((c) => c.id === it.cluster) : null;
+
+  // News stories are meant to be READ on the wall, not clicked through.
+  if (it.article) {
+    el.classList.add('story');
+    el.innerHTML = `${media}
+      <div class="body">
+        <div class="outlets" title="${esc(it.outlets?.join(', ') || '')}">
+          <span class="cnt">${it.score}</span> outlets covering this
+        </div>
+        <h3 class="head">${esc(it.title)}</h3>
+        <p class="art">${esc(it.article)}</p>
+        <div class="meta">
+          <span class="src">${esc((it.outlets || []).slice(0, 3).join(' · '))}</span>
+        </div>
+      </div>`;
+    el.onclick = () => openSheet(it);
+    el.onkeydown = (e) => { if (e.key === 'Enter') openSheet(it); };
+    return el;
+  }
 
   el.innerHTML = `${media}
     <div class="body">
@@ -296,6 +380,7 @@ function attachVideo(el, box, it) {
 const sheet = $('#sheet');
 $('#sheetClose').onclick = () => sheet.close();
 sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.close(); });
+sheet.addEventListener('close', () => settleDwell());
 
 /* Browse without closing: ← → , swipe, or the on-screen arrows. */
 let sheetIndex = -1;
@@ -322,9 +407,19 @@ sheet.addEventListener('touchend', (e) => {
   if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
 }, { passive: true });
 
+/** Opening something is a signal; staying on it is a stronger one. */
+function settleDwell() {
+  if (!openedItem) return;
+  if (Date.now() - openedAt > DWELL_BONUS_MS) credit(openedItem, 1.5);
+  openedItem = null;
+}
+
 function openSheet(it, index) {
+  settleDwell();
   const list = visible();
   sheetIndex = index ?? list.indexOf(it);
+  credit(it, 1);
+  openedItem = it; openedAt = Date.now();
   const thread = (FEED.clusters || []).find((c) => c.id === it.cluster);
 
   // Glossary entries the build has learned. A format seen many times has a
@@ -352,6 +447,9 @@ function openSheet(it, index) {
     ${it.kind === 'video' && it.video
       ? `<video src="${esc(it.video)}" autoplay muted loop playsinline controls></video>`
       : it.src ? `<img src="${esc(it.srcFull || it.src)}" alt="" loading="eager">` : ''}
+    ${it.article ? `<p class="ctx">${esc(it.article)}</p>` : ''}
+    ${it.outlets?.length ? `<div class="gloss"><h3>Covered by ${it.outlets.length}${it.score > it.outlets.length ? '+' : ''} outlets</h3>
+      <div class="tags">${it.outlets.map((o) => `<span class="tag">${esc(o)}</span>`).join('')}</div></div>` : ''}
     ${(it.body || it.blurb) ? `<p class="ctx">${esc(it.body || it.blurb)}</p>` : ''}
     ${it.comment ? `<figure class="says">
       <blockquote>${esc(it.comment)}</blockquote>
@@ -435,6 +533,25 @@ async function forceRebuild() {
 }
 
 /* ------------------------------------------------------------ data saver */
+
+const tuneBtn = $('#tune');
+const syncTune = () => {
+  tuneBtn.setAttribute('aria-pressed', String(tuned));
+  const n = taste.opens || 0;
+  tuneBtn.title = !tuned ? 'Ranking off — showing newest first'
+    : n < 5 ? `Learning what you like (${n}/5 opens)`
+    : 'Tuned to what you open · double-click to reset';
+};
+tuneBtn.onclick = () => {
+  tuned = !tuned;
+  localStorage.setItem('wall.tuned', tuned ? '1' : '0');
+  syncTune(); reset();
+};
+tuneBtn.ondblclick = () => {
+  taste = { topic: {}, source: {}, tag: {}, opens: 0, at: Date.now() };
+  saveTaste(); syncTune(); reset();
+};
+syncTune();
 
 const saverBtn = $('#saver');
 const syncSaver = () => saverBtn.setAttribute('aria-pressed', String(saver));

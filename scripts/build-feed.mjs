@@ -18,12 +18,13 @@ import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  TOPICS, ARCHIVE_TOPICS, PER_TOPIC_CAP, ARCHIVE_PER_QUERY,
+  TOPICS, ARCHIVE_TOPICS, NEWS_SECTIONS, PER_TOPIC_CAP, ARCHIVE_PER_QUERY,
   LEMMY_HOST, LEMMY_SORT, LEMMY_LIMIT, LEMMY_GAP_MS,
   IMGUR_PAGES, GIPHY_LIMIT, BLUESKY_FEED, BLUESKY_LIMIT,
   REDDIT_GAP_MS, REDDIT_WINDOW, REDDIT_LIMIT,
 } from './sources.mjs';
-import { loadMemory, saveMemory, enrich } from './llm.mjs';
+import { loadMemory, saveMemory, enrich, llm, parseJson } from './llm.mjs';
+import { buildNews } from './news.mjs';
 import { addComments } from './context.mjs';
 import { loadArchive, saveArchive, mergeArchive } from './archive.mjs';
 
@@ -503,7 +504,15 @@ async function main() {
   const archived = await buildArchive(archive);
   await saveArchive(ARC, archive);
 
-  await write(woven, { clusters, glossary, archive: archived });
+  // The news desk. Independent of everything above — if it fails, the wall
+  // is unaffected.
+  let news = [];
+  try {
+    const model = llm();
+    news = await buildNews({ ask: model?.ask || null, parseJson, parseRss });
+  } catch (e) { warn('news desk failed:', e.message); }
+
+  await write(woven, { clusters, glossary, archive: archived, news });
 }
 
 /** Fetch evergreen material and merge it into the persistent archive. */
@@ -538,21 +547,22 @@ async function buildArchive(archive) {
 async function write(items, extra = {}) {
   await mkdir(dirname(OUT), { recursive: true });
   const archive = extra.archive || [];
-  const all = [...items, ...archive];
+  const news = extra.news || [];
+  const all = [...news, ...items, ...archive];
 
-  const meta = (t) => Object.fromEntries(Object.entries(t).map(([k, v]) =>
-    [k, { label: v.label, emoji: v.emoji, archive: !!v.archive }]));
+  const meta = (t, extraProps = {}) => Object.fromEntries(Object.entries(t).map(([k, v]) =>
+    [k, { label: v.label, emoji: v.emoji, archive: !!v.archive, ...extraProps }]));
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    topics: { ...meta(TOPICS), ...meta(ARCHIVE_TOPICS) },
+    topics: { ...meta(NEWS_SECTIONS, { news: true }), ...meta(TOPICS), ...meta(ARCHIVE_TOPICS) },
     clusters: extra.clusters || [], glossary: extra.glossary || {},
     count: all.length, items: all,
   };
   await writeFile(OUT, JSON.stringify(payload));
   const kb = (Buffer.byteLength(JSON.stringify(payload)) / 1024).toFixed(1);
   const withImg = all.filter((i) => i.src).length;
-  log(`wrote data/feed.json — ${items.length} live + ${archive.length} archived `
+  log(`wrote data/feed.json — ${news.length} news + ${items.length} live + ${archive.length} archived `
     + `(${withImg} with media), ${payload.clusters.length} clusters, ${kb} KB`);
 }
 

@@ -132,6 +132,18 @@ async function ask(p, prompt, maxTokens) {
   return { text, usage };
 }
 
+/**
+ * A bound `ask` for other modules (the news desk) plus the JSON parser, so
+ * provider selection stays in one place. Null when no key is configured.
+ */
+export function llm() {
+  const p = provider();
+  if (!p) return null;
+  return { name: p.name, model: p.model, ask: (prompt, max) => ask(p, prompt, max) };
+}
+
+export { parseJson };
+
 function parseJson(text, fallback) {
   try {
     const a = text.indexOf('{'), b = text.indexOf('[');

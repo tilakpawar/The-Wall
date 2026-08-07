@@ -91,6 +91,26 @@ npx serve .                                # look at it
 
 ---
 
+## The news desk (`scripts/news.mjs`)
+
+Four sections — Geopolitics, India, United States, Briefing — each with up to 10 stories written as one readable paragraph you can read **on the wall**, no click required.
+
+**How importance is decided.** GDELT indexes thousands of outlets worldwide, free and keyless. The build pulls recent articles per section, clusters headlines that are clearly the same story (token overlap, Jaccard ≥ 0.42), and ranks by **how many distinct outlets covered it**. Breadth of coverage is a much better importance signal than any single outlet's front page, and one publisher shouting loudly can't game it. Anything covered by fewer than two outlets is dropped.
+
+**How bias is handled.** It isn't adjudicated — it's shown. Each story displays its outlet count and names them, so you can see whether something is wall-to-wall or narrow. The model is given every headline in the cluster and instructed to state only what the coverage agrees on, to say so plainly when outlets characterise the story differently, and to avoid adjectives that take a side. If the headlines are too thin to write honestly, it's told to write less rather than speculate.
+
+I deliberately did not build a list of outlets ranked by political lean. That would just substitute my judgement for theirs. `NEWS_BLOCKED_DOMAINS` in `sources.mjs` is empty and yours to fill.
+
+Cost is four model calls per build regardless of story count. Without a key you still get clustered headlines and outlet counts — just no written paragraph.
+
+## Tuning to what you read
+
+There's no server and no account, so personalization uses the only honest signal available: what you open, and how long you stay. It lives in `localStorage` and **never leaves your browser**.
+
+Opening an item credits its topic, source and tags; lingering past 8 seconds credits them more. Scores decay ~1.5% a day, so an old obsession fades instead of permanently defining you. Ranking stays off until you've opened 5 things, and the original order is partly preserved so one topic can't take over the wall.
+
+The slider icon in the header shows the state, toggles it off, and double-click resets everything to zero.
+
 ## Two kinds of tab
 
 **Live tabs** (Memes, Meme origins, Viral & drama, Tech) rotate. Each build replaces them with what's trending now.

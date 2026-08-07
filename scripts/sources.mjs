@@ -78,6 +78,58 @@ export const ARCHIVE_TOPICS = {
   },
 };
 
+/* ---------------------------------------------------------------- news
+ * Stories are ranked by how many distinct outlets covered them, not by any
+ * single publisher's judgement. GDELT indexes thousands of outlets globally
+ * and needs no key; the RSS lists are a fallback for when it's slow.
+ */
+export const NEWS_SECTIONS = {
+  world: {
+    label: 'Geopolitics',
+    emoji: '🌍',
+    query: '(sanctions OR ceasefire OR treaty OR summit OR "security council" OR tariffs OR "peace talks" OR airstrike OR diplomacy) sourcelang:eng',
+    rss: [
+      ['https://feeds.bbci.co.uk/news/world/rss.xml', 'BBC World'],
+      ['https://www.aljazeera.com/xml/rss/all.xml', 'Al Jazeera'],
+      ['https://feeds.npr.org/1004/rss.xml', 'NPR World'],
+    ],
+  },
+  india: {
+    label: 'India',
+    emoji: '🇮🇳',
+    query: 'sourcecountry:IN sourcelang:eng',
+    rss: [
+      ['https://www.thehindu.com/news/national/feeder/default.rss', 'The Hindu'],
+      ['https://indianexpress.com/section/india/feed/', 'Indian Express'],
+      ['https://scroll.in/feed', 'Scroll.in'],
+    ],
+  },
+  us: {
+    label: 'United States',
+    emoji: '🇺🇸',
+    query: 'sourcecountry:US sourcelang:eng',
+    rss: [
+      ['https://feeds.npr.org/1001/rss.xml', 'NPR'],
+      ['https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml', 'BBC US & Canada'],
+    ],
+  },
+  brief: {
+    label: 'Briefing',
+    emoji: '📰',
+    query: '(science OR economy OR climate OR health OR technology OR court OR election) sourcelang:eng',
+    rss: [
+      ['https://feeds.bbci.co.uk/news/rss.xml', 'BBC'],
+      ['https://feeds.npr.org/1002/rss.xml', 'NPR'],
+    ],
+  },
+};
+
+export const NEWS_PER_SECTION = 10;
+export const NEWS_TIMEOUT_MS = 25_000;
+
+// Your call, not mine. Add any domain you don't want in the mix.
+export const NEWS_BLOCKED_DOMAINS = [];
+
 export const PER_TOPIC_CAP = 40;
 
 // Archive caps. Nothing is removed until the collection passes MAX, and even
