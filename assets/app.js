@@ -211,7 +211,7 @@ function tile(it, n) {
         ${it.score != null ? `<span class="sep">·</span><span>${kfmt(it.score)}</span>` : ''}
         ${it.comments ? `<span class="sep">·</span><span>${kfmt(it.comments)} 💬</span>` : ''}
       </div>
-      ${(it.body || it.blurb || it.terms?.length) ? '<span class="more">What is this? →</span>' : ''}
+      ${(it.body || it.blurb || it.comment || it.terms?.length) ? '<span class="more">What is this? →</span>' : ''}
     </div>`;
 
   const img = el.querySelector('img');
@@ -282,6 +282,10 @@ function openSheet(it) {
       ? `<video src="${esc(it.video)}" autoplay muted loop playsinline></video>`
       : it.src ? `<img src="${esc(it.src)}" alt="">` : ''}
     ${(it.body || it.blurb) ? `<p class="ctx">${esc(it.body || it.blurb)}</p>` : ''}
+    ${it.comment ? `<figure class="says">
+      <blockquote>${esc(it.comment)}</blockquote>
+      <figcaption>top comment${it.commentBy ? ` · ${esc(it.commentBy)}` : ''}</figcaption>
+    </figure>` : ''}
     ${glossHtml}
     ${it.tags?.length ? `<div class="tags">${it.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}
     <a class="go" href="${esc(it.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>`;

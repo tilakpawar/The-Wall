@@ -1,7 +1,9 @@
 /**
  * The LLM layer: clustering, context blurbs, and a glossary that grows over time.
+ * Entirely optional — without a key the wall still shows the human-written
+ * context that context.mjs gathers for free.
  *
- * Two calls per build, both against Haiku:
+ * Two calls per build:
  *   Pass 1 — cluster the new items into story threads + write per-item blurbs,
  *            and flag which known glossary terms apply.
  *   Pass 2 — teach the glossary: define anything new that showed up, and
@@ -15,8 +17,28 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
-const MODEL = 'claude-haiku-4-5-20251001';
-const API = 'https://api.anthropic.com/v1/messages';
+/**
+ * Provider selection. Groq's free tier is the default: no credit card, 30
+ * requests/minute, and this build uses ~5k tokens against a six-figure daily
+ * allowance. Anthropic is used only if you explicitly supply that key instead.
+ * With neither, everything still works — items keep the human-written context
+ * from context.mjs, they just don't get clusters or a glossary.
+ */
+function provider() {
+  if (process.env.GROQ_API_KEY) return {
+    name: 'groq',
+    url: 'https://api.groq.com/openai/v1/chat/completions',
+    model: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
+    key: process.env.GROQ_API_KEY,
+  };
+  if (process.env.ANTHROPIC_API_KEY) return {
+    name: 'anthropic',
+    url: 'https://api.anthropic.com/v1/messages',
+    model: 'claude-haiku-4-5-20251001',
+    key: process.env.ANTHROPIC_API_KEY,
+  };
+  return null;
+}
 
 const DAY = 86400e3;
 const MAX_ANNOTATED = 900;     // rolling cache of already-explained post ids
@@ -79,21 +101,35 @@ function prune(mem) {
 
 /* --------------------------------------------------------------- transport */
 
-async function ask(key, prompt, maxTokens) {
-  const r = await fetch(API, {
-    method: 'POST',
-    headers: { 'x-api-key': key, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-    body: JSON.stringify({
-      model: MODEL,
-      max_tokens: maxTokens,
-      messages: [{ role: 'user', content: prompt }],
-      // Force the reply to start as JSON so there's no preamble to strip.
-      ...(maxTokens ? {} : {}),
-    }),
-  });
-  if (!r.ok) throw new Error(`${r.status} ${(await r.text()).slice(0, 200)}`);
+/** One request, either provider, same return shape. */
+async function ask(p, prompt, maxTokens) {
+  const isGroq = p.name === 'groq';
+
+  const headers = isGroq
+    ? { Authorization: `Bearer ${p.key}`, 'content-type': 'application/json' }
+    : { 'x-api-key': p.key, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' };
+
+  const body = isGroq
+    ? {
+        model: p.model, max_tokens: maxTokens, temperature: 0.3,
+        // JSON mode removes the "here is your JSON:" preamble entirely.
+        response_format: { type: 'json_object' },
+        messages: [
+          { role: 'system', content: 'You reply with a single valid JSON object and nothing else.' },
+          { role: 'user', content: prompt },
+        ],
+      }
+    : { model: p.model, max_tokens: maxTokens, messages: [{ role: 'user', content: prompt }] };
+
+  const r = await fetch(p.url, { method: 'POST', headers, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`${p.name} ${r.status} ${(await r.text()).slice(0, 200)}`);
   const j = await r.json();
-  return { text: j.content?.[0]?.text || '', usage: j.usage || {} };
+
+  const text = isGroq ? (j.choices?.[0]?.message?.content || '') : (j.content?.[0]?.text || '');
+  const usage = isGroq
+    ? { input_tokens: j.usage?.prompt_tokens, output_tokens: j.usage?.completion_tokens }
+    : (j.usage || {});
+  return { text, usage };
 }
 
 function parseJson(text, fallback) {
@@ -110,7 +146,7 @@ function parseJson(text, fallback) {
 
 /* ------------------------------------------------------ pass 1: understand */
 
-async function passCluster(key, fresh, mem) {
+async function passCluster(p, fresh, mem) {
   const known = Object.entries(mem.glossary)
     .sort((a, b) => (b[1].seen || 0) - (a[1].seen || 0))
     .slice(0, 90)
@@ -139,14 +175,14 @@ Reply with ONLY this JSON, no prose:
 
 ${lines}`;
 
-  const { text, usage } = await ask(key, prompt, 6000);
+  const { text, usage } = await ask(p, prompt, 6000);
   log(`pass 1: in≈${usage.input_tokens} out≈${usage.output_tokens}`);
   return parseJson(text, { clusters: [], items: [] });
 }
 
 /* ---------------------------------------------------------- pass 2: learn */
 
-async function passLearn(key, newKeys, mem, contextByKey) {
+async function passLearn(p, newKeys, mem, contextByKey) {
   if (!newKeys.length) { log('pass 2: skipped (nothing new to define)'); return {}; }
 
   const asks = newKeys.slice(0, 25).map((k) => {
@@ -166,7 +202,7 @@ Reply with ONLY JSON: {"key":{"name":"...","what":"...","kind":"format"}, ...}
 
 ${asks}`;
 
-  const { text, usage } = await ask(key, prompt, 3000);
+  const { text, usage } = await ask(p, prompt, 3000);
   log(`pass 2: in≈${usage.input_tokens} out≈${usage.output_tokens}`);
   return parseJson(text, {});
 }
@@ -174,7 +210,7 @@ ${asks}`;
 /* -------------------------------------------------------------- orchestrate */
 
 export async function enrich(items, mem) {
-  const key = process.env.ANTHROPIC_API_KEY;
+  const p = provider();
   const stamp = new Date().toISOString();
 
   // 1. Reuse anything we've already explained. This is the main cost control:
@@ -190,7 +226,8 @@ export async function enrich(items, mem) {
   }
   log(`${reused} reused from memory, ${fresh.length} new`);
 
-  if (!key) { log('skipped (no ANTHROPIC_API_KEY)'); prune(mem); return { clusters: [], glossary: {} }; }
+  if (!p) { log('skipped (no GROQ_API_KEY or ANTHROPIC_API_KEY) — items keep their free source context'); prune(mem); return { clusters: [], glossary: {} }; }
+  log(`using ${p.name} (${p.model})`);
   if (!fresh.length) { prune(mem); return { clusters: [], glossary: refGlossary(items, mem) }; }
 
   let clusters = [];
@@ -198,7 +235,7 @@ export async function enrich(items, mem) {
   const contextByKey = {};
 
   try {
-    const r = await passCluster(key, fresh, mem);
+    const r = await passCluster(p, fresh, mem);
     clusters = (r.clusters || []).map((c) => ({ id: slug(c.id || c.label), label: c.label, why: c.why || '' }));
     const valid = new Set(clusters.map((c) => c.id));
 
@@ -223,7 +260,7 @@ export async function enrich(items, mem) {
   }
 
   try {
-    const defs = await passLearn(key, [...newKeys], mem, contextByKey);
+    const defs = await passLearn(p, [...newKeys], mem, contextByKey);
     for (const [k, d] of Object.entries(defs)) {
       const key2 = slug(k);
       const prev = mem.glossary[key2];

@@ -24,6 +24,7 @@ import {
   REDDIT_GAP_MS, REDDIT_WINDOW, REDDIT_LIMIT,
 } from './sources.mjs';
 import { loadMemory, saveMemory, enrich } from './llm.mjs';
+import { addComments } from './context.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'data/feed.json');
@@ -52,6 +53,7 @@ const item = (o) => ({
   id: o.id, source: o.source, sourceUrl: o.sourceUrl, title: o.title,
   score: o.score ?? null, comments: o.comments ?? null, ts: o.ts || Math.floor(Date.now() / 1000),
   body: (o.body || '').slice(0, 900), blurb: null,
+  comment: null, commentBy: null,   // filled by context.mjs, free
   kind: o.kind || 'text', src: o.src || null, srcset: o.srcset || null,
   w: o.w || null, h: o.h || null, video: o.video || null,
 });
@@ -397,6 +399,10 @@ async function main() {
 
   if (!woven.length) { console.error('No items fetched — refusing to overwrite feed.json'); process.exit(1); }
 
+  // Free, human-written context first — this runs with no keys at all.
+  await addComments(woven);
+
+  // Then the optional model pass for clusters, blurbs and the glossary.
   const memory = await loadMemory(MEM);
   const { clusters, glossary } = await enrich(woven, memory);
   await saveMemory(MEM, memory);

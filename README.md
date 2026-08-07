@@ -67,13 +67,15 @@ Edit `scripts/sources.mjs` to change topics or communities. Nothing else needs t
 
 **4. Giphy** (optional) — <https://developers.giphy.com/dashboard/> → Create an App → **API Key**. Secret: `GIPHY_API_KEY`
 
-**5. Anthropic** (optional) — enables clusters, blurbs and the glossary. Secret: `ANTHROPIC_API_KEY`
+**5. Groq** (optional, free) — enables clusters, blurbs and the glossary at no cost. <https://console.groq.com/keys> → free tier, no credit card. Secret: `GROQ_API_KEY`
 
 **6. Secrets go in** repo → Settings → Secrets and variables → Actions → New repository secret. Names must match exactly:
 
 ```
-IMGUR_CLIENT_ID    GIPHY_API_KEY    ANTHROPIC_API_KEY
+IMGUR_CLIENT_ID    GIPHY_API_KEY    GROQ_API_KEY
 ```
+
+`ANTHROPIC_API_KEY` also works and is used only if `GROQ_API_KEY` is absent.
 
 **7. Run it once.** Actions → *Refresh feed* → Run workflow. Takes a couple of minutes. The log prints a line per source — `c/memes: 28` means it worked, `imgur: skipped (no IMGUR_CLIENT_ID)` means that secret is missing. Then open your Pages URL.
 
@@ -88,6 +90,18 @@ npx serve .                                # look at it
 ```
 
 ---
+
+## Context without a model (`scripts/context.mjs`)
+
+The expanded panel gets real explanations before any model is involved, because the good ones are already written by humans:
+
+- **Wikipedia** ships an encyclopedia `extract` with every most-read article
+- **Know Your Meme** ships an origin summary in its RSS
+- **Lemmy and Hacker News** have comment sections, and the top comment is usually the single best explanation of why something is funny or what actually happened
+
+That last one is a lookup per post — free, no key, no rate limit. It's budgeted to the ~24 highest-scoring posts that actually have discussion behind them, and it filters out deleted comments, one-word replies, and emoji-only noise before accepting one.
+
+The result is that **the wall is fully useful with zero API keys of any kind**. The model layer below is a bonus, not a dependency.
 
 ## The LLM layer (`scripts/llm.mjs`)
 
@@ -109,9 +123,10 @@ Prompts live at the bottom of `llm.mjs` and are worth tuning to your taste. The 
 |---|---|---|
 | Pass 1 | ~5k in / ~3k out | |
 | Pass 2 | ~1.5k in / ~1k out (often skipped) | |
-| **Claude Haiku total** | under a cent | **roughly $1–3** |
-| GitHub Actions | ~50s | free tier (public repo = unlimited) |
-| Firecrawl | 1 scrape | ~180 credits/mo — inside the free tier |
+| **Groq free tier** | ~3% of the daily allowance | **$0** |
+| *(or Claude Haiku)* | under a cent | *roughly $1–3* |
+| Every content source | — | **$0** |
+| GitHub Actions + Pages | ~2 min | free (public repo = unlimited) |
 
 Titles only. Never image data, never post bodies, never URLs. Output is compact JSON, not prose.
 
