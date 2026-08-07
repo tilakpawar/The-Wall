@@ -1,0 +1,11 @@
+{
+  "clusters": [
+    {"id":"algorithm-backlash","label":"The feed is on trial","why":"A regulatory inquiry landed the same week two viral threads accused platforms of throttling reach, so the two stories merged.","count":3},
+    {"id":"3am-brain","label":"Nobody / me at 3am","why":"A caption template that resurfaces every few months; this week's wave started from a single post that hit the front page.","count":2}
+  ],
+  "glossary": {
+    "six-seven": {"name":"Six-seven","what":"A number chant lifted from a rap lyric that spread through short-form video, where creators shout it over unrelated footage. It became a generational in-joke, then a parody of adults trying to explain it.","kind":"joke","seen":9},
+    "nobody-me-at": {"name":"\"Nobody: / Me:\"","what":"A caption format where an imagined silence is followed by the poster doing something unprompted. It has been recycled since roughly 2019 and is now used semi-ironically.","kind":"format","seen":22},
+    "italian-brainrot": {"name":"Italian brainrot","what":"AI-narrated absurd creatures with pseudo-Italian names, born from jokes about text-to-speech accents. It grew into a shared universe with fan-made lore and merchandise.","kind":"community","seen":6}
+  }
+}
