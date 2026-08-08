@@ -1,0 +1,3023 @@
+{
+ "version": 1,
+ "updatedAt": "2026-08-08T16:27:00.010Z",
+ "glossary": {
+  "u-sure-kid": {
+   "name": "U Sure Kid",
+   "what": "",
+   "kind": "event",
+   "seen": 4,
+   "first": "2026-08-07",
+   "last": "2026-08-07"
+  },
+  "acceptance-meme": {
+   "name": "Acceptance Meme",
+   "what": "A simple format where someone responds to any statement or scenario with 'I'd accept it', expressing casual agreement or willingness; commonly used as a humorous non-sequitur response across social media.",
+   "kind": "format",
+   "seen": 11,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "trump": {
+   "name": "Trump",
+   "what": "Refers to Donald Trump, the 45th President of the United States, known for his controversial presidency and public figure status. His name is often used in news headlines and social media discussions about politics and current events.",
+   "kind": "person",
+   "seen": 8,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "ai": {
+   "name": "AI",
+   "what": "Artificial Intelligence systems, particularly generative AI models like Grok (associated with X/Twitter). The term encompasses AI-generated content and the controversies surrounding its moderation and use.",
+   "kind": "event",
+   "seen": 11,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "bird-torpedo": {
+   "name": "Bird Torpedo",
+   "what": "A photograph of a bird diving or flying directly at the camera at high speed, creating a dynamic and humorous perspective. The term comes from the bird's streamlined, projectile-like appearance during these moments.",
+   "kind": "format",
+   "seen": 1,
+   "first": "2026-08-07",
+   "last": "2026-08-07"
+  },
+  "ballpark-pun": {
+   "name": "Ballpark Pun",
+   "what": "A joke that plays on the double meaning of \"ballpark figure\" (an approximate number) by giving the literal seating capacity of a baseball stadium instead. It originated from internet humor communities.",
+   "kind": "joke",
+   "seen": 5,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "dream-meme": {
+   "name": "Dream Meme",
+   "what": "A phrase used to jokingly attribute the origin of an idea or statement to a dream, often for humorous or ironic effect. It is likely a form of self-deprecating humor or a lighthearted way to introduce an unusual or unexpected thought.",
+   "kind": "joke",
+   "seen": 1,
+   "first": "2026-08-07",
+   "last": "2026-08-07"
+  },
+  "relatable-parenting-moment": {
+   "name": "Relatable Parenting Moment",
+   "what": "A humorous observation about a common experience in parenting, often expressed in a brief, anecdotal format. It originated from social media platforms where parents share and commiserate about their daily challenges.",
+   "kind": "format",
+   "seen": 7,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "novelty-product": {
+   "name": "Novelty Product",
+   "what": "A novelty product is a unique or absurd item created for entertainment or marketing purposes, often originating from companies or brands as a form of publicity stunt.",
+   "kind": "format",
+   "seen": 6,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "gandalf-meme": {
+   "name": "Gandalf Meme",
+   "what": "The Gandalf meme is an image macro or joke featuring Gandalf, a character from J.R.R. Tolkien's Middle-earth stories, often used to express a sense of presence or witness to an event, originating from a scene in the movie Fellowship of the Ring.",
+   "kind": "format",
+   "seen": 6,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "generational-humor": {
+   "name": "Generational Humor",
+   "what": "Generational humor refers to comedic content or jokes that are specific to a particular generation or age group, often highlighting the differences or quirks of that generation, originating from social media platforms and online communities.",
+   "kind": "community",
+   "seen": 6,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "art-fight-2026": {
+   "name": "Art Fight 2026",
+   "what": "Art Fight is an online art exchange event where participants create art for each other, and Art Fight 2026 is the 2026 iteration of this event, which appears to have originated from online art communities.",
+   "kind": "event",
+   "seen": 1,
+   "first": "2026-08-08",
+   "last": "2026-08-08"
+  },
+  "football-criticism": {
+   "name": "Football Criticism",
+   "what": "A form of commentary that criticizes decisions or actions in the football world, often using analogies or humorous comparisons. It originated from fans and pundits discussing football on various online platforms.",
+   "kind": "joke",
+   "seen": 2,
+   "first": "2026-08-08",
+   "last": "2026-08-08"
+  },
+  "fifa-news": {
+   "name": "FIFA News",
+   "what": "News and updates about the Fédération Internationale de Football Association (FIFA), the governing body of international football. It covers various topics such as leadership changes, controversies, and tournament updates.",
+   "kind": "event",
+   "seen": 2,
+   "first": "2026-08-08",
+   "last": "2026-08-08"
+  },
+  "relatable-dream": {
+   "name": "Relatable Dream",
+   "what": "A humorous and exaggerated expression of a common anxiety or fear, often presented in a hypothetical dream scenario, originating from online communities and social media platforms.",
+   "kind": "joke",
+   "seen": 1,
+   "first": "2026-08-08",
+   "last": "2026-08-08"
+  }
+ },
+ "annotated": {
+  "gp_tO9WLDEUfx1OuZZUht": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49201970": {
+   "b": "AMD's acquisition enables specialized hardware optimization for AI model inference.",
+   "t": [
+    "ai",
+    "hardware"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_OfkGZ5H2H3f8Y": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49204352": {
+   "b": "Landmark ruling assigns Meta responsibility for mental health damage to minors.",
+   "t": [
+    "social-media",
+    "legal"
+   ],
+   "c": "meta-legal",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_6YBug4vIMVO36": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49199346": {
+   "b": null,
+   "t": [
+    "text"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_tXL4FHPSnVJ0A": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49184355": {
+   "b": "Physical phenomenon observed in solar atmosphere; advances understanding of plasma dynamics.",
+   "t": [
+    "science",
+    "astronomy"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_JmVcakKIdojgpBC2iw": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49138446": {
+   "b": "Community reforestation project demonstrates scalable ecological restoration in urban environments.",
+   "t": [
+    "environment",
+    "urbanism"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_H5C8CevNMbpBqNqFjl": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49202716": {
+   "b": "Oral delivery mechanism for targeted antimicrobial defense; potential alternative to vaccines.",
+   "t": [
+    "biotech",
+    "medicine"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_l396FvhXOqm20Pogo": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49208535": {
+   "b": "Database optimization through modern CPU features and algorithmic improvements for workload pattern.",
+   "t": [
+    "databases",
+    "performance"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_XHeLeuirRbwptHhSWd": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49209385": {
+   "b": null,
+   "t": [
+    "programming"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_13hxeOYjoTWtK8": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49213754": {
+   "b": "Major Java ecosystem maintainer formally excludes generative AI code from contributions.",
+   "t": [
+    "ai",
+    "open-source"
+   ],
+   "c": "ai-code-governance",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_xUA7aT1vNqVWHPY1cA": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49208393": {
+   "b": "Browser automation framework leveraging serverless isolation for distributed agent execution.",
+   "t": [
+    "web",
+    "ai"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_3o6Ztq9ELrKTRs2Zdm": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49208458": {
+   "b": "Minimalist alternative to Twitter-like platforms emphasizing simplicity and user control.",
+   "t": [
+    "social-media",
+    "open-source"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_qFG4dgGE9qLUyKeHTS": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49213029": {
+   "b": null,
+   "t": [
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_yiADANv89n7UQuS5kJ": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49211921": {
+   "b": "Astronomical survey catalogues millions of supermassive black holes; major dataset for cosmology research.",
+   "t": [
+    "astronomy",
+    "science"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_xpLvyRBoiElS4QHCmW": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49214008": {
+   "b": null,
+   "t": [
+    "ai"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_fUQ4rhUZJYiQsas6WD": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49158934": {
+   "b": "Mathematical structure from formal verification repurposed as creative tool for sound design.",
+   "t": [
+    "music",
+    "creative-tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_FoH28ucxZFJZu": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49112511": {
+   "b": "Design tool combining typography with nostalgic UI metaphor for creative accessibility.",
+   "t": [
+    "design",
+    "tools"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_hpnAuoZpSYoUCyshEZ": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49158302": {
+   "b": "Architectural curiosity exploring historical significance and whimsy in London retail design.",
+   "t": [
+    "architecture",
+    "history"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_qFcq2N4bAYTkDS4CPD": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49211660": {
+   "b": "Topological puzzle combining impossible geometry with traditional word game constraints.",
+   "t": [
+    "puzzle",
+    "math"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_ILrVkY6MFnK4sUvrNU": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49170241": {
+   "b": null,
+   "t": [
+    "social"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_lszAB3TzFtRaU": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "hn_49147721": {
+   "b": "Engineering feat restoring and powering 75-year-old computing component; retrotech preservation.",
+   "t": [
+    "history",
+    "hardware"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_E1VwJMNWeLeIFV1sZA": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_XxowRoIpcU3te": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_c2L205226f7ndfrq7H": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_blSTtZehjAZ8I": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "gp_9x9aW8DLaWvR8bBJ5D": {
+   "b": null,
+   "t": [
+    "gif"
+   ],
+   "c": "friday-energy",
+   "g": [],
+   "at": "2026-08-07T18:22:35.594Z"
+  },
+  "lm_50384077": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_1bzy39m": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Perez_Hilton": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50384358": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_1susa1a": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Abdul_El-Sayed": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50390713": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_udoay4": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Spider-Man:_Brand_New_Day": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50389444": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50395773": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_x988iq": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_The_Odyssey_(2026_film)": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "hn_49211386": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388050": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_1bzbov7": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Pradeep_Rawat_(actor)": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398507": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50390067": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Glen_Hansard": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50391627": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Zendaya": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388389": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398341": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Tom_Holland": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388614": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50387380": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Deaths_in_2026": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50379522": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Haley_Stevens": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50408143": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50405844": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_2026_United_States_Senate_election_in_Michigan": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50379640": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398513": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_.xyz": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398345": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_Pan_Am_Flight_103": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398349": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "wk_George_Lombard_Jr.": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50389057": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50378564": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_onxqtss6hd244ena": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50399741": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50391786": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_hgtkaugewfgcjq3i": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50383393": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50395772": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_gbdjmpmndlaxy2fm": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398337": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_t5jwd5f35ihrp77a": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50403928": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50387069": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_4lmpqxf2vtez6xu4": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "hn_49209539": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50394730": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_wvhxdce7kbcsh3ry": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50378803": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_jltsyvf7yzb2pmgq": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50386614": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_nz253isrrczks7zy": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50395890": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388675": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_i6dvnmusuzcn37fi": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50404018": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_awmvvp3hdjvaqy7y": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50401238": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50400426": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_hjr2zvsqs5s4oc6u": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50387383": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50399239": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_kopo32wbzzzn5wau": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398959": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398339": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_usxfzee6ttgcjqzq": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50385510": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398399": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_sdm7zutvwrna3sky": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "hn_49214098": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398336": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_hjxkwyvnovydgp6y": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50402687": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50408716": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_s32b7c7rqq6sqtsq": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50385644": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398392": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_lqvpq23hkxgq7zne": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50390501": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_spzida7g7n4xaeqe": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50410273": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50381160": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_itqzffkbkeq2z7u4": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50390563": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398510": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50393543": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50398509": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_qbppuqxyqk7lig6y": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50408503": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_rlyuuywm74kvxm34": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50397626": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50410185": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_nhaeuwisiszksz7q": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "hn_49214863": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50382193": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_32od7braf6wd4k3e": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50378769": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50400155": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50384729": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388082": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50388390": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "bs_tbnowhlysikfjorq": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "lm_50395150": {
+   "b": null,
+   "at": "2026-08-07T19:36:40.322Z"
+  },
+  "kym_3ixrme": {
+   "b": "Explainer on viral TikTok meme format originating from a comment thread between two users named Oryx and Dixiegirl2011.",
+   "t": [
+    "meme",
+    "tiktok",
+    "viral"
+   ],
+   "c": null,
+   "g": [
+    "u-sure-kid"
+   ],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_vkwvdoh4m7sbf43a": {
+   "b": null,
+   "t": [
+    "bluesky"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_56m3uxdd7lmjdwke": {
+   "b": "Publishing industry observation about asymmetric reading patterns across gender lines.",
+   "t": [
+    "publishing",
+    "gender",
+    "books"
+   ],
+   "c": "gender-reading-disparity",
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_xcpgiskrggi2hzuu": {
+   "b": "Agreement/affirmation post using #BookSky hashtag.",
+   "t": [
+    "bluesky",
+    "publishing"
+   ],
+   "c": "gender-reading-disparity",
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_ftwkmdpiauchcrgy": {
+   "b": "Art historical documentation of a 2017 British linocut work.",
+   "t": [
+    "art",
+    "printmaking"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_iv3tmalfjmxicqda": {
+   "b": "Thread listing canonical dystopian novels (Handmaid's Tale, 1984, Fahrenheit 451, etc.) as surprisingly predictive of modern conditions.",
+   "t": [
+    "literature",
+    "dystopia",
+    "politics"
+   ],
+   "c": "dystopian-fiction-relevance",
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_gvxnig5vyadanvee": {
+   "b": "Assertion about Trump's direct personal involvement in an unspecified situation, from Mother Jones.",
+   "t": [
+    "politics",
+    "trump"
+   ],
+   "c": null,
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_m435ul56j7xnbtya": {
+   "b": "Report of major volcanic eruption today at Mount Etna with secondary lava vents opening.",
+   "t": [
+    "volcano",
+    "earth-science",
+    "spanish"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_ahvcolrvog77ywqm": {
+   "b": "Federal appeals court ruling blocking above-ground construction pending Congressional approval, likely environmental or tribal lands matter.",
+   "t": [
+    "law",
+    "environment",
+    "congress"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_j46bwwzkbzsockkq": {
+   "b": "Post about Caroni Swamp, a 12,000-acre mangrove sanctuary in Trinidad and Tobago known for wildlife.",
+   "t": [
+    "nature",
+    "environment",
+    "wetlands"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "hn_49214468": {
+   "b": "Databricks reportedly reduced AI coding tool spending by 70%, suggesting market shift or efficiency gains.",
+   "t": [
+    "ai",
+    "tech",
+    "databricks"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "lm_50412669": {
+   "b": "Low-context meme expressing acceptance or resignation to an unspecified scenario.",
+   "t": [
+    "meme",
+    "reddit"
+   ],
+   "c": null,
+   "g": [
+    "acceptance-meme"
+   ],
+   "at": "2026-08-07T19:49:54.014Z"
+  },
+  "bs_vdjlcuoywfuq7ici": {
+   "b": "Wholesome observation that all cats universally love boxes.",
+   "t": [
+    "animals",
+    "comfort"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "bs_ageyonqraoldzk5u": {
+   "b": "Reflects on difficulty of photographing birds diving toward camera lens.",
+   "t": [
+    "photography",
+    "wildlife"
+   ],
+   "c": null,
+   "g": [
+    "bird-torpedo"
+   ],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "bs_fqxlhfswweu5s4lu": {
+   "b": "GOP members calling for resignation of fellow representative facing domestic abuse allegations.",
+   "t": [
+    "politics",
+    "scandal"
+   ],
+   "c": null,
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "bs_qy6stvk7iqtzeegq": {
+   "b": null,
+   "t": [
+    "politics",
+    "elections"
+   ],
+   "c": "trump-endorsed-losses",
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "bs_n3eee2dkjrtib5ja": {
+   "b": "Prior administration attempted to suppress curriculum on American history and science education.",
+   "t": [
+    "politics",
+    "censorship",
+    "education"
+   ],
+   "c": null,
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "hn_49214770": {
+   "b": "Searchable digital archive of over 1,000 classical texts with word-by-word linguistic parsing.",
+   "t": [
+    "technology",
+    "classics",
+    "education"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T19:56:04.530Z"
+  },
+  "kym_ikebns": {
+   "b": "Mysaria's accent in House of the Dragon has become a meme target as fan criticism of the character intensifies.",
+   "t": [
+    "television",
+    "fandom",
+    "meme-culture"
+   ],
+   "c": "hotd-backlash",
+   "g": [],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "bs_7h5aluqqge7qxo5q": {
+   "b": null,
+   "t": [
+    "personal",
+    "travel"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "lm_50411612": {
+   "b": null,
+   "t": [
+    "meme",
+    "sound-of-music"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "bs_aiuurjngv3c7r65a": {
+   "b": "X's content moderation failure allowed AI-generated child sexual abuse material to circulate before removal.",
+   "t": [
+    "ai",
+    "child-safety",
+    "content-moderation"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "bs_n4abyko5s2j3dvua": {
+   "b": "A joke treating sports stadium capacity as the correct answer to vague requests for estimates.",
+   "t": [
+    "joke",
+    "wordplay"
+   ],
+   "c": null,
+   "g": [
+    "ballpark-pun"
+   ],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "bs_lo7r7kcfqqgskfgy": {
+   "b": null,
+   "t": [
+    "meme",
+    "family-dynamics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "hn_49135457": {
+   "b": null,
+   "t": [
+    "culture",
+    "literature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:19:12.832Z"
+  },
+  "bs_yyubzpttiuephqii": {
+   "b": "Lawmakers investigate Trump's VA",
+   "t": [
+    "politics",
+    "veterans"
+   ],
+   "c": "trump-va-scandal",
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "hn_49209572": {
+   "b": "Life originated twice on Earth",
+   "t": [
+    "science",
+    "biology"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "lm_50413790": {
+   "b": null,
+   "t": [
+    "cute",
+    "animals"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "bs_rxiedbxhagopfuny": {
+   "b": "Scenic horse photo",
+   "t": [
+    "photography",
+    "nature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "lm_50402120": {
+   "b": "CPU vulnerability found",
+   "t": [
+    "tech",
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "lm_50398394": {
+   "b": "Dream-inspired meme",
+   "t": [
+    "memes",
+    "humor"
+   ],
+   "c": null,
+   "g": [
+    "dream-meme"
+   ],
+   "at": "2026-08-07T20:35:31.684Z"
+  },
+  "hn_49207236": {
+   "b": "2027 memory capacity sold out",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50414479": {
+   "b": null,
+   "t": [
+    "humor"
+   ],
+   "c": "lemmyshitpost-thread",
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_qfmw4hzphmdxhdnq": {
+   "b": "Artist showcases painting",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50413775": {
+   "b": null,
+   "t": [
+    "humor"
+   ],
+   "c": "lemmyshitpost-thread",
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_56kruvo3zwmr6vre": {
+   "b": "Homemade Zen Garden",
+   "t": [
+    "diy",
+    "relaxation"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50414853": {
+   "b": "AI causes electricity price hike",
+   "t": [
+    "energy",
+    "ai"
+   ],
+   "c": "ai-energy-impact",
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_vdqh4wuukbtdkhbm": {
+   "b": "Promoting Zippel Bay State Park",
+   "t": [
+    "travel"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50416021": {
+   "b": null,
+   "t": [
+    "humor"
+   ],
+   "c": "lemmyshitpost-thread",
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_6ume3btiips6fcji": {
+   "b": "Sharing Shakespeare quote",
+   "t": [
+    "literature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50414492": {
+   "b": null,
+   "t": [
+    "humor"
+   ],
+   "c": "lemmyshitpost-thread",
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "hn_49216362": {
+   "b": "Water system security concern",
+   "t": [
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_gmuyai52r7rkz2k4": {
+   "b": "Artist showcases painting",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_lhtrzvgzbsc6jre4": {
+   "b": "Republican senators call for resignation",
+   "t": [
+    "politics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "hn_49214775": {
+   "b": "Psychological warfare in reverse engineering",
+   "t": [
+    "security",
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "lm_50411822": {
+   "b": "Relatable parenting moment",
+   "t": [
+    "parenting",
+    "humor"
+   ],
+   "c": null,
+   "g": [
+    "relatable-parenting-moment"
+   ],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_q25jstirejbvm5iq": {
+   "b": "Artist shares serene landscape",
+   "t": [
+    "art",
+    "nature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "hn_49157770": {
+   "b": "Guarded methods in OCaml",
+   "t": [
+    "programming"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_ykvef4rex3ol7i6a": {
+   "b": "Wildlife photography",
+   "t": [
+    "nature",
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T22:34:57.689Z"
+  },
+  "bs_cr4qbuoblaui43bm": {
+   "b": "Banded Kingfisher species",
+   "t": [
+    "wildlife",
+    "malaysia"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "bs_f3uaswsoce4pvo3a": {
+   "b": "Dahlia mural in Ireland",
+   "t": [
+    "art",
+    "ireland"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "lm_50416799": {
+   "b": "Novelty sunglasses",
+   "t": [
+    "tech",
+    "novelty"
+   ],
+   "c": null,
+   "g": [
+    "novelty-product"
+   ],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "bs_5dugsck7giazcbbe": {
+   "b": "Humorous parenting",
+   "t": [
+    "humor",
+    "parenting"
+   ],
+   "c": "relatable-moments",
+   "g": [
+    "relatable-parenting-moment"
+   ],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "lm_50415981": {
+   "b": null,
+   "t": [
+    "fruit",
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "lm_50416862": {
+   "b": "Gandalf meme",
+   "t": [
+    "meme",
+    "gandalf"
+   ],
+   "c": null,
+   "g": [
+    "gandalf-meme"
+   ],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "bs_gx7tmjkwn7gh57gu": {
+   "b": "Book talk event",
+   "t": [
+    "books",
+    "event"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "bs_3dvexgmdrurlxo7a": {
+   "b": "Relatable book moment",
+   "t": [
+    "books",
+    "relatable"
+   ],
+   "c": "relatable-moments",
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "lm_50416800": {
+   "b": "AI debate",
+   "t": [
+    "tech",
+    "ai"
+   ],
+   "c": "data-center-debate",
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "lm_50416850": {
+   "b": "Generational humor",
+   "t": [
+    "humor",
+    "generational"
+   ],
+   "c": null,
+   "g": [
+    "generational-humor"
+   ],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "bs_cost4undfnosmssa": {
+   "b": "Dog's pool day",
+   "t": [
+    "dog",
+    "summer"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "hn_49141521": {
+   "b": "Negative values issue",
+   "t": [
+    "tech",
+    "issue"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-07T23:52:05.953Z"
+  },
+  "kym_nsv7t5": {
+   "b": "meme explanation",
+   "t": [
+    "meme"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "bs_yt2eiyz7lbwf42s4": {
+   "b": "schooner admiration",
+   "t": [
+    "sailing"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "lm_50419118": {
+   "b": "contract loss",
+   "t": [
+    "tech"
+   ],
+   "c": "flock-controversy",
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "hn_49216946": {
+   "b": "ai initiative",
+   "t": [
+    "ai"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "bs_lytdi7z45pbnknqu": {
+   "b": "trump criticism",
+   "t": [
+    "politics"
+   ],
+   "c": "trump-trans-sports",
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "bs_l7dgtxrcim7p33zm": {
+   "b": "flower appreciation",
+   "t": [
+    "flowers"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "lm_50416852": {
+   "b": "tech showcase",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "bs_3dwtw7dzlofgo6uq": {
+   "b": "environmental concern",
+   "t": [
+    "environment"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "lm_50404918": {
+   "b": "ai model training",
+   "t": [
+    "ai"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "bs_tpppiogi7emdwgsi": {
+   "b": "art sharing",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T01:13:26.351Z"
+  },
+  "hn_49217993": {
+   "b": "Nixpkgs core team disbands",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "hn_49218179": {
+   "b": "Voyager 2 probe extended",
+   "t": [
+    "space"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_7ddl3lj5afhh3sie": {
+   "b": "cat spill",
+   "t": [
+    "funny"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_u3no6fayo2urjzfa": {
+   "b": "hummingbird and bees",
+   "t": [
+    "nature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "hn_49135261": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50418357": {
+   "b": "dull moment",
+   "t": [
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_twlqaaynrmlium4m": {
+   "b": "vintage postcard",
+   "t": [
+    "history"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_murjliwgygjx3wke": {
+   "b": "Trump's White House plans",
+   "t": [
+    "politics"
+   ],
+   "c": "trump-white-house",
+   "g": [
+    "trump"
+   ],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50416856": {
+   "b": "true friendship",
+   "t": [
+    "heartwarming"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_cuabthtnv3jlunxa": {
+   "b": "FCC chair's financial report",
+   "t": [
+    "politics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "hn_49189457": {
+   "b": "hamster on Strava",
+   "t": [
+    "funny"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_onmnplyppcs43awu": {
+   "b": "animal human bonds",
+   "t": [
+    "heartwarming"
+   ],
+   "c": "animal-human-bonds",
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50416860": {
+   "b": "client waiting",
+   "t": [
+    "relatable"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_t5gywxccsfutfgsi": {
+   "b": "goodnight from Scotland",
+   "t": [
+    "friendly"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50417686": {
+   "b": "beat them",
+   "t": [
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_plshdm2fmw4uxq3i": {
+   "b": "Great Lakes love",
+   "t": [
+    "nature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50417682": {
+   "b": "break on through",
+   "t": [
+    "music"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50413563": {
+   "b": "supersonic flight",
+   "t": [
+    "tech"
+   ],
+   "c": "tech-advances",
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "bs_yspcndmnlleqqxrq": {
+   "b": "art fight",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [
+    "art-fight-2026"
+   ],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "hn_49218707": {
+   "b": "Mythos social engineering",
+   "t": [
+    "ai"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50418860": {
+   "b": "Meta account removals",
+   "t": [
+    "tech"
+   ],
+   "c": "tech-advances",
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50422415": {
+   "b": "late for ages",
+   "t": [
+    "relatable"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "lm_50417123": {
+   "b": "city moves to virtual meetings",
+   "t": [
+    "politics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T04:52:02.095Z"
+  },
+  "wk_Jason_Arday": {
+   "b": "Jason Arday's Wikipedia page",
+   "t": [
+    "wikipedia"
+   ],
+   "c": "wikipedia-trending",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "wk_Chris_Hansen": {
+   "b": "Chris Hansen's Wikipedia page",
+   "t": [
+    "wikipedia"
+   ],
+   "c": "wikipedia-trending",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "wk_Primetime_(2026_film)": {
+   "b": "New film release",
+   "t": [
+    "movies"
+   ],
+   "c": "wikipedia-trending",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "wk_To_Catch_a_Predator": {
+   "b": "TV show page",
+   "t": [
+    "tv"
+   ],
+   "c": "wikipedia-trending",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50423469": {
+   "b": "Humorous post",
+   "t": [
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_hoy34nvdcjfajsci": {
+   "b": "Beautiful sunrise photo",
+   "t": [
+    "photography"
+   ],
+   "c": "glastonbury-morning",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_juzvrldqlo5axv7a": {
+   "b": "Morning scenery",
+   "t": [
+    "nature"
+   ],
+   "c": "glastonbury-morning",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_n5sofwshavoq3te4": {
+   "b": "Football criticism",
+   "t": [
+    "sports"
+   ],
+   "c": null,
+   "g": [
+    "football-criticism"
+   ],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_kxb4lzfadcg7zq7a": {
+   "b": "Relatable parenting moment",
+   "t": [
+    "parenting"
+   ],
+   "c": null,
+   "g": [
+    "relatable-parenting-moment"
+   ],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_24bntjr7lumqesne": {
+   "b": "FIFA news",
+   "t": [
+    "sports"
+   ],
+   "c": null,
+   "g": [
+    "fifa-news"
+   ],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "hn_49171223": {
+   "b": "Archaeological discovery",
+   "t": [
+    "science"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_rocxmmto6ymutjri": {
+   "b": "Flower photography",
+   "t": [
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "hn_49219508": {
+   "b": "CPU security issue",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_axwh2mvv3w7q27ja": {
+   "b": "Inspirational quote",
+   "t": [
+    "quotes"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_3wd3zamoyf7blotm": {
+   "b": "Upcoming holiday",
+   "t": [
+    "holidays"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_ijtoataytkf3zpkq": {
+   "b": "Cute animal photo",
+   "t": [
+    "animals"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50422928": {
+   "b": "Fashion post",
+   "t": [
+    "fashion"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50413707": {
+   "b": "News article",
+   "t": [
+    "news"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_heqatgl6vpbmit6y": {
+   "b": "Morning greeting",
+   "t": [
+    "greetings"
+   ],
+   "c": "gunaydin-greetings",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50421502": {
+   "b": "Music reference",
+   "t": [
+    "music"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_uuz6ep2ihjyp7wl4": {
+   "b": "Morning greeting",
+   "t": [
+    "greetings"
+   ],
+   "c": "gunaydin-greetings",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "hn_49169417": {
+   "b": "Tech article",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50417866": {
+   "b": "Good morning post",
+   "t": [
+    "greetings"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_eavxvequa6qqmp5y": {
+   "b": "Art post",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "hn_49169566": {
+   "b": "Science article",
+   "t": [
+    "science"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_2hsr4bstfui6gyfq": {
+   "b": "Morning greeting",
+   "t": [
+    "greetings"
+   ],
+   "c": "gunaydin-greetings",
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50428336": {
+   "b": "AI news",
+   "t": [
+    "ai"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50419382": {
+   "b": "Music post",
+   "t": [
+    "music"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "bs_xyn72ggoncemzuri": {
+   "b": "Art post",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T08:34:36.890Z"
+  },
+  "lm_50427330": {
+   "b": "casual greeting",
+   "t": [
+    "hello"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50428560": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50427326": {
+   "b": "food-related humor",
+   "t": [
+    "food",
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_vxjhet55kbwuq5ry": {
+   "b": "heartwarming animal story",
+   "t": [
+    "animals",
+    "heartwarming"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49220350": {
+   "b": "environmental concern",
+   "t": [
+    "environment",
+    "pollution"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50428980": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_q4os53dj2do5sybu": {
+   "b": "summer reading list",
+   "t": [
+    "books",
+    "summer"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50430551": {
+   "b": "ai implementation in 911 calls",
+   "t": [
+    "ai",
+    "emergency"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50428989": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_bm3imlmh33m7g4by": {
+   "b": "street art showcase",
+   "t": [
+    "art",
+    "street-art"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49220313": {
+   "b": "wildfire tracking technology",
+   "t": [
+    "technology",
+    "wildfires"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_5nkztnchb77m7t4m": {
+   "b": "lawsuit against idaho national guard",
+   "t": [
+    "lawsuit",
+    "military"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50429746": {
+   "b": "unique pet project",
+   "t": [
+    "pets",
+    "technology"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_5nqdi755k5gmm7pa": {
+   "b": "public art installation",
+   "t": [
+    "art",
+    "public-installation"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49220609": {
+   "b": "ai-related incident",
+   "t": [
+    "ai",
+    "incident"
+   ],
+   "c": "tech-and-ai",
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_txzdzw6vs5uzu6wa": {
+   "b": "painting showcase",
+   "t": [
+    "art",
+    "painting"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49221041": {
+   "b": "historical photography",
+   "t": [
+    "history",
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_ei6ldh54dzvh7b6q": {
+   "b": "poetic description of nature",
+   "t": [
+    "nature",
+    "poetry"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50430777": {
+   "b": "government surveillance",
+   "t": [
+    "surveillance",
+    "government"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50424752": {
+   "b": "space exploration humor",
+   "t": [
+    "space",
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50430778": {
+   "b": "gaming controversy",
+   "t": [
+    "gaming",
+    "controversy"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50424455": {
+   "b": "measurement joke",
+   "t": [
+    "joke",
+    "measurement"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_ceiryc5hedqztbza": {
+   "b": "cat photo",
+   "t": [
+    "cats",
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49220126": {
+   "b": "weather forecasting breakthrough",
+   "t": [
+    "weather",
+    "forecasting"
+   ],
+   "c": "tech-and-ai",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50426642": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_ms2s4fouq6yvfa4u": {
+   "b": "travel photography",
+   "t": [
+    "travel",
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50429728": {
+   "b": "spooky atmosphere",
+   "t": [
+    "spooky",
+    "atmosphere"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50430780": {
+   "b": "meta fine for minor protection",
+   "t": [
+    "meta",
+    "fine"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_hwz6em72qigotosu": {
+   "b": "ukrainian artist showcase",
+   "t": [
+    "art",
+    "ukrainian"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49141236": {
+   "b": "verilog core implementation",
+   "t": [
+    "verilog",
+    "implementation"
+   ],
+   "c": "tech-and-ai",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50428406": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_gf4pcxq3nhgntt2a": {
+   "b": "brazil wins basketball game",
+   "t": [
+    "sports",
+    "brazil"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50425883": {
+   "b": "funny comparison",
+   "t": [
+    "humor",
+    "comparison"
+   ],
+   "c": "memes-and-humor",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_g6qmu2rsewy6isfa": {
+   "b": "scottish landscape painting",
+   "t": [
+    "art",
+    "scotland"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50426339": {
+   "b": "brazil tourism",
+   "t": [
+    "travel",
+    "brazil"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_ne3jykyoxbu5pgpu": {
+   "b": "garden photo",
+   "t": [
+    "gardening",
+    "photography"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49220339": {
+   "b": "military mental health concern",
+   "t": [
+    "military",
+    "mental-health"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50414531": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_pquvealqgqy2l7ye": {
+   "b": "historic sports moment",
+   "t": [
+    "sports",
+    "history"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50431587": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50416370": {
+   "b": "age-related humor",
+   "t": [
+    "humor",
+    "age"
+   ],
+   "c": "memes-and-humor",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_lhgduxabpfvmuz7y": {
+   "b": "illustration showcase",
+   "t": [
+    "art",
+    "illustration"
+   ],
+   "c": "art-and-street-art",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50430264": {
+   "b": "tech market volatility",
+   "t": [
+    "tech",
+    "market"
+   ],
+   "c": "tech-and-ai",
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50431824": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_rypbbdhvucwuommi": {
+   "b": "photography showcase",
+   "t": [
+    "photography",
+    "italy"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49119508": {
+   "b": "graph coloring problem",
+   "t": [
+    "graph",
+    "coloring"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "lm_50423256": {
+   "b": "life hack or party trick",
+   "t": [
+    "life-hack",
+    "party-trick"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "bs_ldxauroykiw5i5x4": {
+   "b": "historic sports figure birthday",
+   "t": [
+    "sports",
+    "history"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "hn_49221124": {
+   "b": "forbidden technologies book",
+   "t": [
+    "book",
+    "technology"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T12:37:10.038Z"
+  },
+  "kym_1gs5em5": {
+   "b": "Russian Sleep Experiment meme origin",
+   "t": [
+    "meme"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221939": {
+   "b": "phone hygiene tip",
+   "t": [
+    "health"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221668": {
+   "b": "new dns feature",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_47tiguh56lcsvqxq": {
+   "b": "relatable dream",
+   "t": [
+    "humor"
+   ],
+   "c": null,
+   "g": [
+    "relatable-dream"
+   ],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_352bpaorozaykxla": {
+   "b": "personal identity reflection",
+   "t": [
+    "identity"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50432785": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50432333": {
+   "b": "Microsoft AI update controversy",
+   "t": [
+    "tech",
+    "ai"
+   ],
+   "c": "microsoft-ai",
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49220392": {
+   "b": "ad blocker update",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_55dckl6hwbmcxn5e": {
+   "b": "Norwegian folklore introduction",
+   "t": [
+    "culture"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_lqqabtcfvmd6fbtq": {
+   "b": "war cost update",
+   "t": [
+    "politics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_7y32vn2na3276hlm": {
+   "b": "cute animal photo",
+   "t": [
+    "animals"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221864": {
+   "b": "AI bot issue",
+   "t": [
+    "tech",
+    "ai"
+   ],
+   "c": null,
+   "g": [
+    "ai"
+   ],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_wt2kh2phky44h7pe": {
+   "b": "church abuse investigation",
+   "t": [
+    "investigation"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50428404": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_nmpgmuf7gqcdp4tq": {
+   "b": "FIFA World Cup reflection",
+   "t": [
+    "sports"
+   ],
+   "c": "fifa-world-cup",
+   "g": [
+    "fifa-news"
+   ],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221220": {
+   "b": "retro tech ad",
+   "t": [
+    "tech",
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_2vnsloagaoa4zuvu": {
+   "b": "personal travel story",
+   "t": [
+    "travel"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50432941": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_ms4ghvoxrte7rssu": {
+   "b": "travel photo",
+   "t": [
+    "travel"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50431885": {
+   "b": null,
+   "t": [],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_7cmngb5sk6f6e5cq": {
+   "b": "bird species introduction",
+   "t": [
+    "nature"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49163466": {
+   "b": "tech industry criticism",
+   "t": [
+    "tech",
+    "criticism"
+   ],
+   "c": "technology-criticism",
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221679": {
+   "b": "vintage computer emulator",
+   "t": [
+    "tech",
+    "retro"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_kj7ovpgemuaqv2ta": {
+   "b": "art appreciation",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_kkejmzsh4mp4ktau": {
+   "b": "data center rebranding",
+   "t": [
+    "tech",
+    "marketing"
+   ],
+   "c": "technology-criticism",
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50436416": {
+   "b": "ram pricing update",
+   "t": [
+    "tech"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50434195": {
+   "b": "vpn pricing test",
+   "t": [
+    "tech",
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_hhkohck42axcl6zy": {
+   "b": "boring presentation critique",
+   "t": [
+    "humor"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "lm_50431628": {
+   "b": "vpn explanation",
+   "t": [
+    "tech",
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_ma5y773bvbwp7z4q": {
+   "b": "personal art creation",
+   "t": [
+    "art"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49141642": {
+   "b": "terminal graphics demo",
+   "t": [
+    "tech",
+    "graphics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_sxabim3okvddvfvi": {
+   "b": "personal travel photo",
+   "t": [
+    "travel"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49221711": {
+   "b": "directx driver update",
+   "t": [
+    "tech",
+    "gaming"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_gzw5uukwabsc26rq": {
+   "b": "health update on public figure",
+   "t": [
+    "health",
+    "politics"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "hn_49177224": {
+   "b": "home network security",
+   "t": [
+    "tech",
+    "security"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  },
+  "bs_azbugo3mexdjnrli": {
+   "b": "personal reflection",
+   "t": [
+    "personal"
+   ],
+   "c": null,
+   "g": [],
+   "at": "2026-08-08T16:26:56.116Z"
+  }
+ }
+}
