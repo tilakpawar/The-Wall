@@ -1,0 +1,3696 @@
+{
+ "version": 1,
+ "updatedAt": "2026-10-31T16:42:46.842Z",
+ "glossary": {
+  "u-sure-kid": {
+   "name": "U Sure Kid",
+   "what": "",
+   "kind": "event",
+   "seen": 4,
+   "first": "2026-08-07",
+   "last": "2026-08-07"
+  },
+  "acceptance-meme": {
+   "name": "Acceptance Meme",
+   "what": "A simple format where someone responds to any statement or scenario with 'I'd accept it', expressing casual agreement or willingness; commonly used as a humorous non-sequitur response across social media.",
+   "kind": "format",
+   "seen": 11,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "trump": {
+   "name": "Trump",
+   "what": "Refers to Donald Trump, the 45th President of the United States, known for his controversial presidency and public figure status. His name is often used in news headlines and social media discussions about politics and current events.",
+   "kind": "person",
+   "seen": 14,
+   "first": "2026-08-07",
+   "last": "2026-08-12"
+  },
+  "ai": {
+   "name": "AI",
+   "what": "Artificial Intelligence systems, particularly generative AI models like Grok (associated with X/Twitter). The term encompasses AI-generated content and the controversies surrounding its moderation and use.",
+   "kind": "event",
+   "seen": 20,
+   "first": "2026-08-07",
+   "last": "2026-08-12"
+  },
+  "ballpark-pun": {
+   "name": "Ballpark Pun",
+   "what": "A joke that plays on the double meaning of \"ballpark figure\" (an approximate number) by giving the literal seating capacity of a baseball stadium instead. It originated from internet humor communities.",
+   "kind": "joke",
+   "seen": 5,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "relatable-parenting-moment": {
+   "name": "Relatable Parenting Moment",
+   "what": "A humorous observation about a common experience in parenting, often expressed in a brief, anecdotal format. It originated from social media platforms where parents share and commiserate about their daily challenges.",
+   "kind": "format",
+   "seen": 7,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "novelty-product": {
+   "name": "Novelty Product",
+   "what": "A novelty product is a unique or absurd item created for entertainment or marketing purposes, often originating from companies or brands as a form of publicity stunt.",
+   "kind": "format",
+   "seen": 7,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "gandalf-meme": {
+   "name": "Gandalf Meme",
+   "what": "The Gandalf meme is an image macro or joke featuring Gandalf, a character from J.R.R. Tolkien's Middle-earth stories, often used to express a sense of presence or witness to an event, originating from a scene in the movie Fellowship of the Ring.",
+   "kind": "format",
+   "seen": 7,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "generational-humor": {
+   "name": "Generational Humor",
+   "what": "Generational humor refers to comedic content or jokes that are specific to a particular generation or age group, often highlighting the differences or quirks of that generation, originating from social media platforms and online communities.",
+   "kind": "community",
+   "seen": 7,
+   "first": "2026-08-07",
+   "last": "2026-08-08"
+  },
+  "fifa-news": {
+   "name": "FIFA News",
+   "what": "News and updates about the Fédération Internationale de Football Association (FIFA), the governing body of international football. It covers various topics such as leadership changes, controversies, and tournament updates.",
+   "kind": "event",
+   "seen": 4,
+   "first": "2026-08-08",
+   "last": "2026-08-09"
+  },
+  "ballpark-etiquette": {
+   "name": "ballpark-etiquette",
+   "what": "",
+   "kind": "format",
+   "seen": 4,
+   "first": "2026-08-09",
+   "last": "2026-08-09"
+  }
+ },
+ "annotated": {
+  "bs_cyuryfqzydjhgdg4": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "lm_53638201": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "bs_6z435ojzyosm3z5u": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "bs_dnbsc3slf3qbwpr4": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "bs_lb4kch3btisvjuqi": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "gp_3oriOegdVBuTyN1uFi": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "lm_53624001": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "gp_hiLLD9o1wTB3a": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "bs_3525dprraq7hz7au": {
+   "b": null,
+   "at": "2026-10-27T03:26:03.424Z"
+  },
+  "wk_2026_Brazilian_general_election": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_2026_Serbian_parliamentary_election": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_2026_British_Columbia_general_election": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_Chef_Damu": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_Lorne_Doerkson": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_Ainsley_Earhardt": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53642910": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53642719": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "wk_Billy_Evans_(businessman)": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53642965": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_n2qlfhq3rhdbvgy4": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_afjkorlbmer4zgra": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53643913": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53644582": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_npngxrhqk4o7ekei": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_cp77lcsulrsn3fly": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50255298": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53641894": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_w5k6hucxpqvlehmu": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53646236": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_gudsuqmd4hz6vdaa": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_mocvezpcrtqeg77q": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50240465": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53643165": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_pqu5aguwzm6by6py": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53642780": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_ee25rrdbb2hkwo6a": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50253939": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50196212": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_5v4u4kddvv2dfcky": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_n2bp2odwmatzpzme": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_lmlo5u32oxgujgfi": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53643514": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53647240": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_t7rvhiaobzwm5raa": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50255177": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53649030": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53633694": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53648251": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53646332": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "hn_50212625": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "lm_53648524": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_fa3mbji2snw3ojuu": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_ynrgxh7khwj7v5nm": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "bs_ksnz742p6lj2qgvi": {
+   "b": null,
+   "at": "2026-10-27T09:32:12.576Z"
+  },
+  "kym_o8u2rx": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50259604": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50257419": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50257326": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53650374": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261319": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50258538": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50259343": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_krncysiftznvqndi": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53654482": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_r3rr36fnmd76twbu": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_r37swgqm5b6wwllm": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50260814": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_zocitdgwyqfe3dca": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50258868": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_bidjvmbkyg45bvcy": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_uhkdhptvh7guefi4": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50245014": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53660906": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_qtiot6srpcb3i364": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261784": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_7irwhtxml62je5vq": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53659198": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_65ta2myxpmo3whrq": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53660355": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_7glqebjaina5utru": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261352": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53656213": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_tbxeokgh22zho45u": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53659886": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_qthhyo6b3uxd42im": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53651842": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_5gnqqo7ditgnryfi": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261819": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53653992": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53655350": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_krdzxysl4fp6sc5q": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50232101": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53654259": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_wx4qeq6763w6jjza": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261647": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53659201": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53658563": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_fspx3fubpwwp6k2q": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53662409": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53661971": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_bd3iv3ttsu57dri4": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50232604": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53662549": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_oksk6of63i3lbspy": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261583": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53658356": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50260571": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53661741": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53643838": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261584": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "lm_53662911": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_u732az6nxaux7tja": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261579": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "gp_UJsjwplDfXfaggojM4": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_x7sytwgiefeoiaeu": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "hn_50261998": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "bs_dd7zpiy7k7hlfope": {
+   "b": null,
+   "at": "2026-10-27T17:19:16.496Z"
+  },
+  "kym_18b1i8q": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "kym_138tcby": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "kym_1wol5pl": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53666016": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53665250": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_2bnapmkjz5wbbime": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_tt67raonffmsp5lm": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50264857": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53668791": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50264853": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_qgcqz7t3lbmqv4ou": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53665212": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_7y3i3swl4ni4lyua": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50262229": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_jfrhnpv7co2ly4ty": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53664201": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_ruknnpxre5vdv3ci": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50265609": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53665249": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50224079": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53672905": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_xh2hbd3jk7hqr3vm": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_ri42vcmbidqfy7mq": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50265594": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53667312": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_kgepwevqjz435xfu": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_v4bl4xoxrjxyffyu": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50239214": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_v3udde3iliswow44": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50265128": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53668392": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_zjowl7uqxnbjtpki": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50263701": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53665512": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50236073": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53673665": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_m2l6s42rgohvdlga": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "lm_53673763": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "gp_AC1HrkBir3bGg": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_564e6tnf6e3zckna": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50266780": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_3dekjq7eym4763mi": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "hn_50262982": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "gp_p891AF3yiMjMh6bRdP": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_dsmjoswloa5r5vjy": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "gp_BlVnrxJgTGsUw": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_5tu7vjqulhm6eoju": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "gp_H5C8CevNMbpBqNqFjl": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_ib7kvj3b5ir3uatu": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "bs_rl4almzss6j5r5vi": {
+   "b": null,
+   "at": "2026-10-27T23:25:56.787Z"
+  },
+  "kym_10i4uqo": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53674330": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53676683": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_mni52iaals6jkh44": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53674546": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53674650": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_goyai4wy5xxwbdge": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_kdvb6korlugjflfe": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50234796": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_pnl3yykt626tgz2y": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_vhbwhh4ljfye5glu": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53676039": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_mlvaa4qpcamzzcm4": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_scx4ahrfm3l3p7qe": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53672897": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50268380": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53677155": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_sjkz6yenvgvji7a4": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_44k3lvuj6zcwg4ui": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53678816": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_2gbogimgte2my7uu": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53677485": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50242688": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53678985": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_uxrn2ssb7vhfbnly": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_esrccjauo2hemmmi": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50217978": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_mosjfvt73kkrv2se": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50230896": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_4a3gdo64hfbqlzn4": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "lm_53674342": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_fbcecwifs3ozlgfu": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "hn_50219275": {
+   "b": null,
+   "at": "2026-10-28T03:42:26.856Z"
+  },
+  "bs_25dto6ms6tk45bm4": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_pctjhjj7e7hadpm4": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_rlyfrd7l5n7asd7a": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53680270": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_z3rux32nisin7rhq": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_mblnm33mieovrjf4": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_4r75lnhn6qkesvve": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53679804": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53680075": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_b6gcjh5to7plxbhm": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_i52ayww2awm3wcti": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_ckr7xay22aleifmq": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53679283": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_n3v5c2y7lkbcgxxm": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_iw7f2h52m7u6l26i": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_4lmhk5jq3536ptdq": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53680168": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53685733": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_qsmrmkahwyp6x2me": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53682509": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_ji5g3skpwnpolkne": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "hn_50265393": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_n5mkr3o4ko2or6iy": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_apzwmpij3ikpny2y": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53684945": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_6ith7mehccrn7fb4": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_3rggdgwsnagfvsaa": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53685007": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "bs_7dfigf4qjddutm3y": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53683041": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53684325": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53676884": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "hn_50227400": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "hn_50223739": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53679287": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "hn_50208960": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "hn_50239122": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "gp_UxRD5AkpnBoNfwpzt2": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53686782": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "lm_53685034": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "gp_AZQGMIiEK8yDfGEn55": {
+   "b": null,
+   "at": "2026-10-28T10:16:20.793Z"
+  },
+  "kym_1mk6jxo": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Eric_Bauza": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_2026_Ballon_d'Or": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50271640": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Luiz_Inácio_Lula_da_Silva": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53692477": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Walter_Koenig": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Ballon_d'Or": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Student_List": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_Jair_Bolsonaro": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "wk_You_Can_See_Everything": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50273396": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50243060": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_bqfjuzyvk7cd3gvi": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50273171": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_xpcs2bis7jz2lisa": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50276792": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_axm7hd2ucy5jmfui": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50274409": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53691200": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_s3ujbwgjvawsyt5y": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50276940": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53697781": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_6gf52lmlalc3r7iu": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_ibs4sz2jvg6fa4se": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50275373": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53690975": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_s7tdyxujhphedffq": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_lfswcru2xx7mymue": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53694022": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_aonoyuwomwt7l27y": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50275626": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53686942": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50274251": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53692492": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_7fkhkmnpje47tzba": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50209269": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_5agi5p3xtswih2ku": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50273731": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53697634": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_ukhzfttqmyb4lfnm": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50223109": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53693997": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_h5caqindqwcg2nsm": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_efy6bnkf4kehnp4i": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_7f4ve3o5rixzvcwe": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50231649": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53696862": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_owptozci6hbufete": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50276883": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53684444": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_4uyzonwwzsb53i3u": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53701091": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53679801": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_esc2sy7lys6bzewi": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50234183": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53678923": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_4n4kzrl76hyrjoqm": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "lm_53701166": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "gp_gql9hrT0iyuk8oieWO": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_zxnh43os7hkpfgtu": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "hn_50276779": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "gp_3og0IQCfsZXScpvKhi": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_zhcpnjmwvw6ecj6y": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_tguwae2a6pn7y32e": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_tpowkk4v7psvwghu": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "gp_bGPTxLislwm3u": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "bs_naskgwdaam6tsvf4": {
+   "b": null,
+   "at": "2026-10-28T17:48:53.431Z"
+  },
+  "kym_s8u6a7": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "kym_9rf9xu": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50276998": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "wk_Elizabeth_Holmes": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53702507": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "wk_Deaths_in_2026": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_u6pkwoj355u6abxi": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53705945": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_2ivg64klg6skrahe": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53708532": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53707499": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_xzj3ohnflcnohetu": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_yncirz3knqezt6ji": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50281044": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_n5lj2ogb2d2iawgu": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53709886": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50280722": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53701932": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_rgiziebg7nzpzfiu": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_zomaua6k567hlduy": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50280662": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53701451": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50277755": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53700239": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_5hqxlb2vsdxitw5y": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53702977": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_td7kertg7tsdd7e4": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50220975": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53708017": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_uumrfpoz74qzqmwm": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50280974": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_xlz2ysx4lsphbs2q": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53706284": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_dcfdk7ohei44k4me": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50250609": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_hqqqhnxne2i2rudm": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_kkm2q2wh2yy3jn6q": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53706286": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53700011": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_fjnipz5jwu42ubue": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "hn_50280824": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_nx3q4zdrug7kihmu": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53705418": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_mkvc5tf4eubhy6qy": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "gp_tXL4FHPSnVJ0A": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_hc6yit6dhhqnrntq": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_4nia6dkiabmcchim": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "gp_3oz8xLlw6GHVfokaNW": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_ysxfxcuq6eqxvgxe": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "lm_53700009": {
+   "b": null,
+   "at": "2026-10-28T23:50:15.773Z"
+  },
+  "bs_gkcpnrvequz2d7v4": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_wiblmj3muovbkgbm": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_eteqxsgm4dhymise": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_zugafn2leyjniz4y": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_bop54hkyy4uxzabe": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_6kw6mjcjn6e6or7q": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_kxht4dnmizuyz3s4": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_4gemnclzslcp4yma": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_j5pu7jcjdcxclyhi": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_tumn4rpo73z57ofa": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50282838": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_euvvtqjx7shpxkbq": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50282454": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_vuyjnolwubdib4ve": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_jl225a6wpckmwjd4": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50282544": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_qrxnspfshr4cl5ku": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_26w6neocle6obufm": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53715241": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_mlzgdskrbdtx3t5i": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53716173": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_fjxlkhcu5q64p76e": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50284089": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_pfyh2vjjo5zkrpei": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_iuueyphvbrvt7vle": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50244929": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53695251": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53702516": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53694148": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_qnbt574hb4c2paja": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50233948": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53713513": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "bs_vi7gadnual2zzf2e": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50233059": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53715192": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53695399": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "hn_50242873": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "lm_53713922": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "gp_qpb9YdJg6qY36": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "gp_ayRF7VrgjtVrvneE5u": {
+   "b": null,
+   "at": "2026-10-29T04:02:23.791Z"
+  },
+  "wk_2026_Israeli_legislative_election": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Harry_Kane": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Susan_Saint_James": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53719143": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53719096": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Gadi_Eisenkot": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53717637": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50285452": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53723991": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50289418": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Alexia_Putellas": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50288019": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Nicki_Minaj": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50288867": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53719997": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53719582": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50287001": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53720737": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "wk_Tanner_McKee": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50285319": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50287919": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53720151": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_bdyaltpjj2y5usnm": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50287898": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53716605": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50243757": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_axpqcas3sbknlrcu": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50287448": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53719434": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53717980": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_edu5xxoerxdky43e": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53723632": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_ij5rivsrvsxbxahm": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53724191": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_2xxlya5nqmhxdjl4": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50286987": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_rwlwcu3v4h3c3nte": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50287599": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53727960": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_25h4auw2sp55unny": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50259697": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_mv4zc4wjzozuwgdu": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53729606": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53729871": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_ex4j73mwe7mdmz54": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53732949": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53727368": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_wf6i6hdxpfjpbn6i": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53720986": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_4riz2ipdudtbcsi4": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53729195": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53714288": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_om5tfowgki4knvvu": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53727370": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53732758": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_srv2kl3ovxvmag3u": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50286738": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53720002": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_detxbafvrzzaoc4a": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53734980": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_mvv5goa5fuihbu3q": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50253100": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_qswjnnk5oaq5nzci": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53733342": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "gp_k8aMtCInLMmm0Nb23i": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53729791": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50242509": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "gp_EvYHHSntaIl5m": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_f7aifz5nampr32gq": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53735506": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_kazmdnc3vzlf5hb4": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "hn_50289859": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_ib64nmlp6qa6lrdq": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53735981": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "bs_xp6i7pmgrb2a3hya": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53736064": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "lm_53735278": {
+   "b": null,
+   "at": "2026-10-29T14:54:08.083Z"
+  },
+  "kym_1dbfsuf": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50294702": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "kym_139ygjd": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "kym_189ugq6": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53737301": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "kym_160wqj9": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "kym_1cj7ij7": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53742905": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53737091": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "kym_yeigk7": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50290177": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50291054": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53736589": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_xdg6m2g5sjg6ev4u": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_np5jqw2gmiriurnm": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50293047": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_qodjzubsw7hqry4i": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50290283": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_cl5vk3ch7ujkrsxu": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50290912": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53733997": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_tslnuxsiw4wjqzvq": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_ffx5hgy2euwbab2q": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53738224": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_vuqoybgdrls5cpdy": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_iebsw5eqhcvjcjee": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50293023": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50291421": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_kopq2bfzanzbibgm": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53736709": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53747456": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53736761": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_dqbsvbuxjhquylfy": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50294507": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_2oip3xkfdvswmk5y": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50294506": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_pot2qft4hik4kekq": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50255161": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53727032": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_pwduqg2gqepg3gva": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50291116": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53742467": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_vrpxo5n2uuuzftvi": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50292727": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_fuugokuolwjk3t7u": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53743954": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53721253": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_ehislhnx7rvemxhm": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50278678": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_o2t2dxpcgih2ddju": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53747673": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "gp_xUNd9CwVoi3osIC71m": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_jcuj3pgdbcagfx5a": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_enc6vsy4wohb3k4e": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50260033": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "gp_999fcCCj45Bde": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_typffijyqjrywfoa": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50294486": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "gp_RhirS1YlRQBr77dYFz": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_ziziomcmmd5skyo4": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "gp_9wG8hpQRkHMoDbCqzu": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_h4grobye53my3aym": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50293115": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "gp_Jw75epe1XxQbbCPLZF": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "bs_pg2e4wzl3zluoxjq": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "lm_53736291": {
+   "b": null,
+   "at": "2026-10-29T20:48:34.646Z"
+  },
+  "hn_50296470": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53750541": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53751828": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53751300": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_tp4rbzmbxhs5quwq": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_4fsgnvtyg3zblfau": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_bxpvcxe6oabf7yga": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50296486": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_ob4jclvps7y37jgu": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53755117": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_cfgnpnlk66kzlopy": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50295450": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_ux7akxu75hg3bily": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_5ya34jpv4yrhifwa": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53750994": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53746683": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_6attnyz3y4ovdini": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50297089": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53741602": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_y3odvhj5bfpw3uym": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53747589": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_q7hlf3c3rjphb72q": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50298964": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53747665": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_47nsi3a5ucyzd37y": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53746407": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50298436": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53733889": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_ktbzzf2747sjdgcy": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53759599": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_d5e4h7vjjahry27i": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50297697": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53729141": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_wjumgwqorbvamixe": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50249598": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_cx3r5wgx3pq2ssvm": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53753595": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_e7vf4evcq3ltyv6i": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53738585": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_oyq4ulzpdch4vgpi": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53758090": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53759023": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_73bjslp7vqsotetu": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53757457": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_u65ltie2mzswiopq": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "gp_6rYa81merNsjhmRPIF": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "lm_53758089": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_3ycht34enoloklh4": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50270651": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "gp_dr14wyjUBTDtfBeHBA": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_kfoqwuqzavz6rxvy": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50273104": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "gp_3o6ZsUJ44ffpnAW7Dy": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "bs_ulnoxv42lcrco6qq": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "hn_50255343": {
+   "b": null,
+   "at": "2026-10-30T04:03:52.481Z"
+  },
+  "kym_yrdc7c": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_hcunsa7gtunsliou": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_u5nxpfmbpo3jb2ay": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_xqpqv5av2b7ry55m": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_nymxe65lgpkpcee4": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53771591": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_jt5ygo3q4utkg7du": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53760865": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_fgp5fegabqels7ci": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_ngfrxwhpf52lpfhe": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_yn7tsgmgeqawp77q": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50301462": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53765567": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_prj2kxuxu5qdq6ym": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_oz7vvffmaxjnubne": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53755808": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_3uocww3oi5ibzwgm": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_yv4wdiowo3f7viva": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_45nvjczhfjxf4esi": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_skioe6ghyxszt2iq": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50302814": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53769908": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53760803": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53775290": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_vmz6nfrx6mh5l5wm": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_mpbdgtu5o6ps72r4": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53761662": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53765149": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_vcqjtagwqirry5s4": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53769233": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53768007": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_556ayrdo4cczb6vq": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53761179": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_4ubkbts7elgvvig4": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50301854": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_ohojkquknsx64rsa": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50263127": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_i2eukj6mhyvfleke": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53770659": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53771399": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_fghtocg3nk3cpx6y": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53762981": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_3do7hvlpucg5kx3q": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53772063": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53756301": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_5ddtijb3od6y37oa": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53768215": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53770361": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50303172": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53773447": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53768272": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50300683": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53776193": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_nqc7at6ik3mrsnli": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53760864": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_w75jtlxjbw5f636i": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50251070": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53738486": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_kod3qoxwsacisyiu": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_gd3puegr3hfxaewu": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50301717": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53775970": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53767886": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53773145": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "bs_xxdura46hwzcvigu": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50273340": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53763238": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53753192": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50302925": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "gp_M9O25XlNvZWCZZ3ADO": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53768379": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50273504": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "gp_PBLYoj3dqPgn5VJ3vz": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53765119": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "gp_jpbAaUG7cjkZy": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50244486": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "gp_mx3w0NisTlf2": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50303488": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "lm_53777429": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "gp_xUA7aT1vNqVWHPY1cA": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "hn_50300643": {
+   "b": null,
+   "at": "2026-10-30T14:46:21.834Z"
+  },
+  "kym_1u9b6j9": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "kym_1jj8v0s": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Dancing_with_the_Stars_(American_TV_series)_season_35": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50305693": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Ted_Bundy": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_VisionQuest": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53785563": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Limonene": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53778971": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50305025": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_2022_Israeli_legislative_election": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Matthew_Perry": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Lamprey": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53779224": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "wk_Yashar_(political_party)": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53783081": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_lchpryssjqp6n4ae": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50307219": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_n7zlw4tvvpd4qjq4": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50305573": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_lfhoa3pnpdgamqt4": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50305480": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53780245": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_hjudzinq5tdaqwam": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50305637": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53788526": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_khjytahs7d4tfh7m": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_5juxpjavowjxm3na": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53784347": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_q5fuwf2tz2itxrvq": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53787572": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_mxh4xv4axmzdwkyi": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50307190": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53780805": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50306442": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53773841": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_xtvwkuqqx6ijts6q": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50307723": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53775354": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_elr3fsjpfw2k4rtq": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53781505": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53779965": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_dsaljtb637gv7dbq": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50272479": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53782102": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_tc3leq5b5tw7lv5i": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50263837": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53785029": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53778796": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53770362": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50296730": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53762991": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53786215": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_npq5v5mite6cor6u": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53789780": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53781201": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_fjl7fhkrbwkd35sq": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50308697": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53771464": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_4kfbptpyvahunnny": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53758309": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_7dlwijspxj42kvpu": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50258496": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53771539": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "bs_oi2goxkemrn3ujgq": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "hn_50306815": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53777489": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "lm_53778659": {
+   "b": null,
+   "at": "2026-10-30T20:19:44.797Z"
+  },
+  "kym_1b2bozu": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "kym_4p10e5": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "kym_1sgk5il": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53793453": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53792822": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53790302": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50309647": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_7rkdcwedxjmpgjnu": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_ca7bbpg2taof4et4": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_aoy6u3ziwkdkrffy": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_jmwjsm7zciq6ahuu": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53791301": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_sqqhhevsvvi7igfi": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_qjtmwyz7pcvtxyxi": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53797062": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_t76gijb5t33o4d3e": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_lw3m5mbke6fxgwqe": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_uftswgiboruanhxq": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50304122": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_ikpchqfwnmjbrqfu": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50277379": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_jap62zgps2cfmrai": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50309029": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_6sobucijtqk3roru": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50311686": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_5ctdeu66vqsmputa": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50309266": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_hv75fkwhg7hq2s7y": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50309314": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53792470": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50310398": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53789889": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_ijewgaxnruxzfysa": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53789999": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53791103": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50312756": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_fk75vikmcfndscza": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53794685": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_haaok2h2vfsqv2om": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53793960": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53799147": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53795560": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53787910": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_zizpgmv7iw53mv7e": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50276355": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_r2u4wuqhw7nl7cca": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "hn_50276613": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53781756": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_exa5iv5nhktcqspu": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53802243": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "lm_53789074": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "bs_lw2n25ot52wi6dh4": {
+   "b": null,
+   "at": "2026-10-31T03:48:36.694Z"
+  },
+  "wk_Patrick_Stewart": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Sunny_Ozell": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_William_Contreras": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Jacob_Misiorowski": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Patrick_Stewart_on_stage_and_screen": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Bob_Uecker": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Pat_Murphy_(baseball_manager)": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Milwaukee_Brewers": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53802139": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Barbara_Barrie": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Lewy_body_dementia": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "wk_Cooper_Pratt": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53800697": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_apcnv5d737fuuaoy": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_eoszomkbnk7u3fiy": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53801090": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53804046": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53804457": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53804110": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53802060": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53803005": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_vpqfffaz2oevpvo4": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "hn_50314085": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "hn_50260753": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_iyltlnmngx2xbf2y": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_wuvysmx4mpus54f4": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "hn_50313661": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53802091": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_gd545ytb2dtfnepy": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53803082": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_cjqvqxb7xtksgrkm": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "hn_50274885": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_mo62ryfsyrbbgcru": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_huastd7z2dozcoki": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "hn_50290652": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53803595": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_j7ytefecemkczuge": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53806700": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_wbu4jsmoywt3bjby": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53806849": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "bs_u3avknx7vpyds3du": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "lm_53808479": {
+   "b": null,
+   "at": "2026-10-31T10:08:00.790Z"
+  },
+  "kym_5brt4r": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50314654": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50314699": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53809957": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50314666": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53810346": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_ktrwwkwca2moyepm": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_gfijei2fe7v7f2mm": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_33xxotvwkxqfz6qq": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50315226": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_gawhxjb7ndfns7hm": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53816349": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50261253": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_mry7t5frv4m57lha": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_wcjbaqjhddx5vyse": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50316531": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_hih6q6pzw5te5pjq": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_47o7z4vub4abjera": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_3nhoxl5xvas2tv44": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53804125": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53815196": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53813285": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_trx3aux33mmiw4ly": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53814967": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53805546": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_o63nt7rw6jfhseci": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50316760": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53802945": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_tkzow6f4gaj2cp34": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53818303": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_qztgxbl4c6gn3tou": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53798294": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_jkzgdmqf7racalbm": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_wkycr36o7o66q67q": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50317363": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53815884": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_bgkanng4vopchgma": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50271052": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53818150": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_yntzq3ci7c2hxepa": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50296700": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53812232": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_4jo5tmiywingy33y": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50317429": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53783387": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_csw6w2wvjliwkkry": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50317534": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53819882": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_wxqfchzoidtbqhlu": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53819679": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53785763": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_iux3lpozc5majpgq": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50300902": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53802056": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "bs_akxsshyn7uw5gprq": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "hn_50317484": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53820280": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53787495": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53819877": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  },
+  "lm_53818444": {
+   "b": null,
+   "at": "2026-10-31T16:42:46.770Z"
+  }
+ }
+}
